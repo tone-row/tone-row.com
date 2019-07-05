@@ -19,9 +19,9 @@
   "license": "ISC",
   "dependencies": {
     "next": "^8.1.0",
+    "next-ga": "^2.3.4",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-ga": "^2.6.0"
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
