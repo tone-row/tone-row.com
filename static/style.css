@@ -11,16 +11,39 @@ body {
 
 html {
   font-family: Reader, sans-serif;
-  font-size: 30px;
+  font-size: 16px;
+  font-size: 16px;
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* CSS Variables */
+  --padding: 1.5rem;
+  --sidebar-width: 13.333rem;
+  --main-max-width: 31.666rem;
+  --h1-font-size: 2.5rem;
+}
+
+@media (min-width: 769px) {
+  html {
+    font-size: 24px;
+
+    /* CSS Variables */
+    --h1-font-size: 1.666rem;
+  }
+}
+
+@media (min-width: 1243px) {
+  html {
+    font-size: 30px;
+  }
 }
 
 main {
-  padding: 1.5rem;
-  font-size: 1.5rem;
-  max-width: 950px;
+  position: relative;
+  padding: var(--padding);
+  font-size: var(--padding);
+  max-width: var(--main-max-width);
   margin-left: auto;
   margin-right: auto;
   line-height: 1.2;
@@ -35,7 +58,7 @@ main *:first-child {
 }
 
 main * + * {
-  margin-top: 1.5rem;
+  margin-top: var(--padding);
 }
 
 a {
