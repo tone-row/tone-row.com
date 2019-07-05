@@ -2,6 +2,7 @@
 
 ### To Do
 
-- Add responsive type
-- Add responsive sidebar
+- Mobile Menu
+- Better copy
+- Meta tags for search
 - Add contact link to sidebar
