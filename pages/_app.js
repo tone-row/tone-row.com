@@ -1,6 +1,10 @@
 import React from 'react';
 import App, { Container } from 'next/app';
+import ReactGA from 'react-ga';
+import Router from 'next/router';
 import Sidebar from '../components/Sidebar';
+
+ReactGA.initialize('UA-143307999-1');
 
 class ToneRowApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -11,6 +15,13 @@ class ToneRowApp extends App {
     }
 
     return { pageProps };
+  }
+
+  constructor(props) {
+    super(props);
+
+    Router.onHashChangeComplete = () =>
+      ReactGA.pageview(window.location.pathname + window.location.search);
   }
 
   render() {

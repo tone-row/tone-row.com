@@ -37,19 +37,25 @@ const Title = () => (
   </h1>
 );
 
-const NavLink = ({ href, children, current }) => (
-  <li>
-    <Link href={href}>
-      <a className={current === href ? 'active' : ''}>{children}</a>
-    </Link>
-    <style jsx>{`
-      a.active {
-        font-size: 1.5rem;
-        line-height: 1;
-      }
-    `}</style>
-  </li>
-);
+const NavLink = React.memo(({ href, children, current }) => {
+  const isActive =
+    (href === '/' && current === '/') ||
+    (current !== '/' && href !== '/' && current.includes(href));
+  return (
+    <li>
+      <Link href={href}>
+        <a className={isActive ? 'active' : ''}>{children}</a>
+      </Link>
+      <style jsx>{`
+        a.active {
+          font-size: 1.5rem;
+          line-height: 1;
+        }
+      `}</style>
+    </li>
+  );
+});
+NavLink.displayName = 'NavLink';
 
 const Nav = ({ current }) => (
   <nav>
