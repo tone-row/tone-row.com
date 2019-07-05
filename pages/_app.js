@@ -20,19 +20,14 @@ class ToneRowApp extends App {
 
     return (
       <Container>
-        <Title tag="span" className="shadow" />
         <div id="App">
           <Sidebar />
           <Component {...pageProps} />
           <style jsx>{`
             #App {
               min-height: 100vh;
-            }
-            @media (min-width: 769px) {
-              #App {
-                display: grid;
-                grid-template-columns: var(--sidebar-width) auto;
-              }
+              display: grid;
+              grid-template-columns: var(--sidebar-width) auto;
             }
           `}</style>
         </div>

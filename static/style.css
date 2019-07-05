@@ -19,7 +19,8 @@ html {
 
   /* CSS Variables */
   --padding: 1.5rem;
-  --sidebar-width: 13.333rem;
+  --sidebar-width: 80px;
+  --nav-display: none;
   --main-max-width: 31.666rem;
   --h1-font-size: 2.5rem;
 }
@@ -30,6 +31,8 @@ html {
 
     /* CSS Variables */
     --h1-font-size: 1.666rem;
+    --sidebar-width: 13.333rem;
+    --nav-display: block;
   }
 }
 
@@ -46,7 +49,7 @@ main {
   max-width: var(--main-max-width);
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 main * {

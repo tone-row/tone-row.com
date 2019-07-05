@@ -2,14 +2,13 @@ import React from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 
-export const Title = ({ tag: Tag = 'h1', className = 'brand' }) => (
-  <Tag className={className}>
+export const Title = () => (
+  <h1>
     <span>Tone</span>
     <div className="line"></div>
     <span>Row</span>
     <style jsx>{`
-      h1,
-      span.shadow {
+      h1 {
         font-size: var(--h1-font-size);
         font-weight: 500;
         display: flex;
@@ -34,20 +33,8 @@ export const Title = ({ tag: Tag = 'h1', className = 'brand' }) => (
         margin-left: 1rem;
         margin-right: 1rem;
       }
-
-      span.shadow {
-        color: yellow;
-      }
-      span.shadow .line {
-        background: yellow;
-      }
-      @media (min-width: 769px) {
-        span.shadow {
-          display: none;
-        }
-      }
     `}</style>
-  </Tag>
+  </h1>
 );
 
 const NavLink = React.memo(({ href, children, current }) => {
@@ -86,6 +73,11 @@ const Nav = ({ current }) => (
         Philosophy
       </NavLink>
     </ul>
+    <style jsx>{`
+      nav {
+        display: var(--nav-display);
+      }
+    `}</style>
   </nav>
 );
 
@@ -95,11 +87,11 @@ const Sidebar = ({ router }) => (
       <Title />
       <Nav current={router.asPath} />
     </div>
+
     <style jsx>{`
       aside {
         background: yellow;
-        position: relative;
-        overflow: hidden;
+        grid-row: 1;
       }
 
       .inner {
