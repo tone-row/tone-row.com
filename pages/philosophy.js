@@ -7,12 +7,11 @@ const Philosophy = () => (
     </Head>
     <p>
       We believe that the common ancestor of creativity and problem-solving is
-      empathy.
+      empathy and that the greatest tool for empathy is communication.
     </p>
-    <p>That the greatest tool for empathy is communication.</p>
     <p>
-      And that by approaching each of our relationships from this perspective we
-      can create solutions that are authentic and enduring.
+      We also believe that by approaching each of our relationships from this
+      perspective we can create solutions that are authentic and enduring.
     </p>
   </main>
 );
