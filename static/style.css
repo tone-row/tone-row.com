@@ -9,6 +9,12 @@ body {
   box-sizing: border-box;
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 html {
   font-family: Reader, sans-serif;
   font-size: 16px;
@@ -60,19 +66,13 @@ main *:first-child {
   margin-top: 0;
 }
 
-main * + * {
+main > * + * {
   margin-top: var(--padding);
 }
 
 a {
   text-decoration: none;
   color: inherit;
-}
-
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
 }
 
 li {

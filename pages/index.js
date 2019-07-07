@@ -8,12 +8,25 @@ function Home() {
       </Head>
       <main>
         <p>
-          Tone Row is a web design and development group with 10 years of
-          experience building websites and digital platforms.
+          Tone Row is a digital design and development collective with 10 years
+          of experience making websites and web applications.
         </p>
         <p>
-          We work with non-profits, cultural institutions, social impact
-          startups, artists, and groups in education and public health.
+          We enjoy working with nonprofits and social-impact startups, artists
+          and cultural institutions, small businesses, and groups in public
+          health and education.
+        </p>
+        <p>
+          Check out the services we offer, our past work, and the philosophy
+          that drives it. Then get in touch with us at{' '}
+          <a
+            href="mailto:bonjour@tone-row.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            bonjour@tone-row.com
+          </a>
+          .
         </p>
       </main>
     </>

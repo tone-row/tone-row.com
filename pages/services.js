@@ -6,9 +6,16 @@ const Services = () => (
       <title>Tone Row — Services</title>
     </Head>
     <p>
-      The services we currently offer include Website Development, App
-      Development, Design-system Consulting, and Productivity Tooling
+      We specialize in web design and development. The services we currently
+      offer include:
     </p>
+    <ul>
+      <li>— Web Design</li>
+      <li>— Web Development</li>
+      <li>— App Development</li>
+      <li>— Design System Development</li>
+      <li>— Consulting on the topics above</li>
+    </ul>
   </main>
 );
 
