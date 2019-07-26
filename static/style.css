@@ -16,46 +16,23 @@ ul {
 }
 
 html {
+  /* CSS Variables */
+  --font-size: 20px;
+  --padding: 1rem;
+  --sidebar-width: 80px;
+  --main-max-width: 31.666rem;
+  --h1-font-size: 2.5rem;
+  --h1-width: calc(100vh - var(--sidebar-width));
+  --h1-top: var(--sidebar-width);
+  --toggle-display: block;
+  --showing-menu-transform: translateX(75%);
+  --showing-menu-transition: transform 300ms ease-in-out;
+
   font-family: Reader, sans-serif;
-  font-size: 16px;
-  font-size: 16px;
+  font-size: var(--font-size);
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* CSS Variables */
-  --padding: 1.5rem;
-  --sidebar-width: 80px;
-  --nav-display: none;
-  --main-max-width: 31.666rem;
-  --h1-font-size: 2.5rem;
-}
-
-@media (min-width: 769px) {
-  html {
-    font-size: 24px;
-
-    /* CSS Variables */
-    --h1-font-size: 1.666rem;
-    --sidebar-width: 13.333rem;
-    --nav-display: block;
-  }
-}
-
-@media (min-width: 1243px) {
-  html {
-    font-size: 30px;
-  }
-}
-
-main {
-  position: relative;
-  padding: var(--padding);
-  font-size: var(--padding);
-  max-width: var(--main-max-width);
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.1;
 }
 
 main * {
@@ -78,4 +55,68 @@ a {
 li {
   margin: 0;
   padding: 0;
+}
+
+nav {
+  position: absolute;
+  background: yellow;
+  width: 75vw;
+  height: 100vh;
+  padding: var(--padding);
+  top: 0;
+  right: 100%;
+}
+
+nav a {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+nav a.active {
+  font-size: 1.5rem;
+}
+
+nav li {
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+@media (min-width: 769px) {
+  html {
+    /* CSS Variables */
+    --font-size: 24px;
+    --h1-font-size: 1.666rem;
+    --sidebar-width: 13.333rem;
+    --h1-width: 100vh;
+    --h1-top: 0;
+    --toggle-display: none;
+    --showing-menu-transform: none;
+    --showing-menu-transition: none;
+  }
+
+  nav {
+    position: relative;
+    width: auto;
+    height: auto;
+    right: auto;
+    top: auto;
+    background: none;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1243px) {
+  html {
+    --font-size: 30px;
+  }
+}
+
+main {
+  position: relative;
+  padding: var(--padding);
+  font-size: calc(1.5 * var(--font-size));
+  max-width: var(--main-max-width);
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.1;
+  align-self: center;
 }

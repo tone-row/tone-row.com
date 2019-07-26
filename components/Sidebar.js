@@ -2,25 +2,46 @@ import React from 'react';
 import Link from 'next/link';
 import { withRouter } from 'next/router';
 
-export const Title = () => (
-  <h1>
-    <span>Tone</span>
-    <div className="line"></div>
-    <span>Row</span>
+export const Title = ({ toggleMenu }) => (
+  <div>
+    <button type="button" onClick={toggleMenu}>
+      Click
+    </button>
+    <h1>
+      <span>Tone</span>
+      <div className="line"></div>
+      <span>Row</span>
+    </h1>
     <style jsx>{`
+      button {
+        width: var(--sidebar-width);
+        height: var(--sidebar-width);
+        padding: 0;
+        border: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: var(--toggle-display);
+        background: white;
+        font-weight: 700;
+      }
+      button:focus {
+        outline: none;
+      }
+
       h1 {
         font-size: var(--h1-font-size);
         font-weight: 500;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 100vh;
+        width: var(--h1-width);
         margin: 0;
         transform: rotate(90deg);
         transform-origin: 0 0;
         position: absolute;
         left: 100%;
-        top: 0;
+        top: var(--h1-top);
         padding: var(--padding);
         line-height: 1;
       }
@@ -34,7 +55,7 @@ export const Title = () => (
         margin-right: 1rem;
       }
     `}</style>
-  </h1>
+  </div>
 );
 
 const NavLink = React.memo(({ href, children, current }) => {
@@ -46,12 +67,6 @@ const NavLink = React.memo(({ href, children, current }) => {
       <Link href={href}>
         <a className={isActive ? 'active' : ''}>{children}</a>
       </Link>
-      <style jsx>{`
-        a.active {
-          font-size: 1.5rem;
-          line-height: 1;
-        }
-      `}</style>
     </li>
   );
 });
@@ -73,18 +88,13 @@ const Nav = ({ current }) => (
         Philosophy
       </NavLink>
     </ul>
-    <style jsx>{`
-      nav {
-        display: var(--nav-display);
-      }
-    `}</style>
   </nav>
 );
 
-const Sidebar = ({ router }) => (
+const Sidebar = ({ router, toggleMenu }) => (
   <aside>
     <div className="inner">
-      <Title />
+      <Title toggleMenu={toggleMenu} />
       <Nav current={router.asPath} />
     </div>
 

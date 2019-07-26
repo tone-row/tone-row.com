@@ -70,6 +70,10 @@ const Work = () => (
       ul {
         list-style: none;
       }
+
+      li {
+        overflow: hidden;
+      }
     `}</style>
   </main>
 );

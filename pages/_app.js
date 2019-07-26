@@ -2,7 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import withGA from 'next-ga';
 import Router from 'next/router';
-import Sidebar, { Title } from '../components/Sidebar';
+import AppWrapper from '../components/AppWrapper';
 
 class ToneRowApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -17,20 +17,9 @@ class ToneRowApp extends App {
 
   render() {
     const { Component, pageProps } = this.props;
-
     return (
       <Container>
-        <div id="App">
-          <Sidebar />
-          <Component {...pageProps} />
-          <style jsx>{`
-            #App {
-              min-height: 100vh;
-              display: grid;
-              grid-template-columns: var(--sidebar-width) auto;
-            }
-          `}</style>
-        </div>
+        <AppWrapper Component={Component} pageProps={pageProps} />
       </Container>
     );
   }
