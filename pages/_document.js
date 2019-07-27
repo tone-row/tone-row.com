@@ -16,6 +16,11 @@ class ToneRowDocument extends Document {
             content="initial-scale=1.0, width=device-width"
             key="viewport"
           />
+          <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="/static/favicon.ico"
+          />
           <link rel="stylesheet" href="/static/style.css" />
         </Head>
         <body>
