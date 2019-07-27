@@ -20,7 +20,7 @@ html {
   --font-size: 20px;
   --padding: 1rem;
   --sidebar-width: 80px;
-  --main-max-width: 31.666rem;
+  --main-max-width: calc(100vw - var(--sidebar-width));
   --h1-font-size: 2.5rem;
   --h1-width: calc(100vh - var(--sidebar-width));
   --h1-top: var(--sidebar-width);
@@ -107,6 +107,7 @@ nav li {
 @media (min-width: 1243px) {
   html {
     --font-size: 30px;
+    --main-max-width: 31.666rem;
   }
 }
 

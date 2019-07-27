@@ -6,64 +6,68 @@ const Work = () => (
       <title>Tone Row — Work</title>
     </Head>
     <p>
-      2018 (Director of Technology, <em>Constructive</em>)
+      2018
+      <br />
+      Constructive
     </p>
     <ul>
       <li>
-        <a href="https://constructive.co/">constructive.co</a>
+        <a href="https://constructive.co/">Constructive</a>
       </li>
       <li>
-        <a href="https://www.impactlab.org/">impactlab.org</a>
+        <a href="https://www.impactlab.org/">Climate Impact Lab</a>
       </li>
       <li>
-        <a href="https://www.theusconstitution.org/">theusconstitution.org</a>
+        <a href="https://www.theusconstitution.org/">
+          Constitutional Accountability Center
+        </a>
       </li>
       <li>
-        <a href="https://dllframework.org/">dllframework.org</a>
+        <a href="https://dllframework.org/">Dual Language Learners</a>
       </li>
       <li>
-        <a href="https://epic.uchicago.in/">epic.uchicago.in</a>
+        <a href="https://epic.uchicago.in/">EPIC India</a>
       </li>
     </ul>
-    <p>2017 (Freelance Developer)</p>
+    <p>2017</p>
     <ul>
       <li>
-        <a href="http://colorama.space/">colorama.space</a>
+        <a href="http://colorama.space/">Colorama</a>
       </li>
       <li>
-        <a href="https://littlesun.com/">littlesun.com</a>
+        <a href="https://littlesun.com/">Little Sun</a>
       </li>
       <li>
-        <a href="http://roughbeast.art/">roughbeast.art</a>
+        <a href="http://roughbeast.art/">Rough Beast Magazine</a>
       </li>
     </ul>
     <p>
-      2014 to 2016 (Senior Developer, <em>Winnow Creative</em>)
+      2014 to 2016
+      <br />
+      Winnow Creative
     </p>
     <ul>
       <li>
-        <a href="http://www.avconusa.com/">avconusa.com</a>
+        <a href="http://www.avconusa.com/">Avcon</a>
       </li>
       <li>
-        <a href="http://criticalfuelsystems.com/">criticalfuelsystems.com</a>
+        <a href="http://criticalfuelsystems.com/">Critical Fuel Systems</a>
       </li>
       <li>
         <a href="http://nccertifiedcareerpathways.com/">
-          nccertifiedcareerpathways.com
+          NC Certified Career Pathways
         </a>
       </li>
       <li>
-        <a href="https://www.trademarkproperties.com/">
-          trademarkproperties.com
-        </a>
+        <a href="https://www.trademarkproperties.com/">Trademark Properties</a>
       </li>
       <li>
         <a href="https://www.trademarkresidential.com/">
-          trademarkresidential.com
+          Trademark Residential
         </a>
       </li>
       <li>
-        <a href="https://www.triangleilg.org/">triangleilg.org</a>
+        <a href="https://www.triangleilg.org/">Triangle ILG</a>
       </li>
     </ul>
     <style jsx>{`
