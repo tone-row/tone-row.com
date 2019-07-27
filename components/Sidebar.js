@@ -84,8 +84,8 @@ const Nav = ({ current }) => (
       <NavLink current={current} href="/work">
         Work
       </NavLink>
-      <NavLink current={current} href="/philosophy">
-        Philosophy
+      <NavLink current={current} href="/approach">
+        Approach
       </NavLink>
     </ul>
   </nav>
