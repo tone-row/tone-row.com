@@ -28,8 +28,10 @@ html {
   --showing-menu-transform: translateX(75%);
   --showing-menu-transition: transform 300ms ease-in-out;
   --menu-margin-bottom: 1rem;
+  --accent: radial-gradient(#e66465, #e5e291) fixed;
 
-  font-family: sans-serif;
+  font-family: 'GT America Trial', sans-serif;
+  font-weight: 500;
   font-size: var(--font-size);
   line-height: 1.4;
   -webkit-font-smoothing: antialiased;
@@ -45,7 +47,7 @@ main *:first-child {
 }
 
 main > * + * {
-  margin-top: var(--padding);
+  margin-top: calc(2 * var(--padding));
 }
 
 a {
@@ -60,7 +62,7 @@ li {
 
 nav {
   position: absolute;
-  background: yellow;
+  background: var(--accent);
   width: 75vw;
   height: 100vh;
   padding: var(--padding);
@@ -123,5 +125,79 @@ main {
   margin-left: auto;
   margin-right: auto;
   line-height: 1.1;
-  align-self: center;
+  /* align-self: center; */
+}
+
+aside {
+  background: var(--accent);
+  grid-row: 1;
+}
+
+aside .inner {
+  padding: var(--padding);
+  position: sticky;
+  top: 0;
+}
+
+#App {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: var(--sidebar-width) auto;
+  transition: var(--showing-menu-transition);
+}
+
+#App.showing-menu {
+  transform: var(--showing-menu-transform);
+}
+
+/* --- */
+
+.sidebar-title button {
+  width: var(--sidebar-width);
+  height: var(--sidebar-width);
+  padding: 0;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: var(--toggle-display);
+  background: white;
+  font-weight: 700;
+}
+.sidebar-title button:focus {
+  outline: none;
+}
+
+.sidebar-title h1 {
+  font-size: var(--h1-font-size);
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--h1-width);
+  margin: 0;
+  transform: rotate(90deg);
+  transform-origin: 0 0;
+  position: absolute;
+  left: 100%;
+  top: var(--h1-top);
+  padding: var(--padding);
+  line-height: 1;
+}
+
+.sidebar-title .line {
+  flex: 1;
+  height: 6px;
+  background: black;
+  margin-top: -4px;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+main ul {
+  list-style: none;
+}
+
+main li {
+  overflow: hidden;
 }

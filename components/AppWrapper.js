@@ -16,18 +16,6 @@ const AppWrapper = memo(({ Component, pageProps }) => {
     <div id="App" className={showMenu ? 'showing-menu' : ''}>
       <Sidebar toggleMenu={toggleMenu} />
       <Component {...pageProps} />
-      <style jsx>{`
-        #App {
-          min-height: 100vh;
-          display: grid;
-          grid-template-columns: var(--sidebar-width) auto;
-          transition: var(--showing-menu-transition);
-        }
-
-        #App.showing-menu {
-          transform: var(--showing-menu-transform);
-        }
-      `}</style>
     </div>
   );
 });

@@ -70,15 +70,6 @@ const Work = () => (
         <a href="https://www.triangleilg.org/">Triangle ILG</a>
       </li>
     </ul>
-    <style jsx>{`
-      ul {
-        list-style: none;
-      }
-
-      li {
-        overflow: hidden;
-      }
-    `}</style>
   </main>
 );
 
