@@ -1,0 +1,48 @@
+{
+  "color": {
+    "background": { "input": { "type": "color" }, "value": "#170033" },
+    "foreground": { "input": { "type": "color" }, "value": "#f3f99f" }
+  },
+  "container": {
+    "desktop": {
+      "input": { "max": 5000, "min": 100, "type": "range" },
+      "value": "941"
+    },
+    "mobile": {
+      "input": { "max": 1000, "min": 10, "type": "range" },
+      "value": "343"
+    }
+  },
+  "font": {
+    "lineHeight": {
+      "desktop": {
+        "input": { "max": 100, "min": 10, "type": "range" },
+        "value": "64"
+      },
+      "mobile": {
+        "input": { "max": 30, "min": 10, "type": "range" },
+        "value": "19"
+      }
+    },
+    "size": {
+      "desktop": {
+        "input": { "max": 100, "min": 10, "type": "range" },
+        "value": "46"
+      },
+      "mobile": {
+        "input": { "max": 30, "min": 10, "type": "range" },
+        "value": "16"
+      }
+    }
+  },
+  "spacing": {
+    "desktop": {
+      "input": { "max": 100, "min": 10, "type": "range" },
+      "value": "47"
+    },
+    "mobile": {
+      "input": { "max": 30, "min": 10, "type": "range" },
+      "value": "25"
+    }
+  }
+}

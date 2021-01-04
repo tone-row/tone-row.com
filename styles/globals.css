@@ -1,16 +1,74 @@
-html,
-body {
-  padding: 0;
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: grayscale;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
+
+main {
+  /* fluid container */
+  --c-mobile: calc(var(--container-mobile) * 1px);
+  --c-desktop: calc(var(--container-desktop) * 1px);
+  --c-difference: calc(var(--container-desktop) - var(--container-mobile));
+  --container: clamp(
+    var(--c-mobile),
+    var(--c-mobile) + var(--c-difference) * ((100vw - 375px) / 1065),
+    var(--c-desktop)
+  );
+  max-width: var(--container);
+
+  /* Fluid Type */
+  --size-mobile: calc(var(--font-size-mobile) * 1px);
+  --size-desktop: calc(var(--font-size-desktop) * 1px);
+  --difference: calc(var(--font-size-desktop) - var(--font-size-mobile));
+  --font-size: clamp(
+    var(--size-mobile),
+    var(--size-mobile) + var(--difference) * ((100vw - 375px) / 1065),
+    var(--size-desktop)
+  );
+
+  --line-height-mobile: calc(var(--font-line-height-mobile) * 1px);
+  --line-height-desktop: calc(var(--font-line-height-desktop) * 1px);
+  --lh-difference: calc(
+    var(--font-line-height-desktop) - var(--font-line-height-mobile)
+  );
+  --line-height: clamp(
+    var(--line-height-mobile),
+    var(--line-height-mobile) + var(--lh-difference) * ((100vw - 375px) / 1065),
+    var(--line-height-desktop)
+  );
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+
+  /* Fluid spacing */
+  --space-mobile: calc(var(--spacing-mobile) * 1px);
+  --space-desktop: calc(var(--spacing-desktop) * 1px);
+  --spacing-difference: calc(var(--spacing-desktop) - var(--spacing-mobile));
+  --spacing: clamp(
+    var(--space-mobile),
+    var(--space-mobile) + var(--spacing-difference) * ((100vw - 375px) / 1065),
+    var(--space-desktop)
+  );
+  padding: var(--spacing);
+  display: grid;
+  gap: var(--spacing);
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
+  opacity: 0.5;
 }
 
-* {
-  box-sizing: border-box;
+a:hover {
+  opacity: 1;
 }
