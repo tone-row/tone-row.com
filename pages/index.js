@@ -6,11 +6,21 @@ import schema from "../styles/schema";
 export default function Home() {
   return (
     <Playgoer schema={schema} styles={styles} settings={{ public: true }}>
-      <CssCustomProperties />
       <div>
+        <CssCustomProperties />
         <Head>
           <title>Tone Row</title>
           <link rel="icon" href="/favicon.ico" />
+          <meta
+            name="Description"
+            content="Tone Row is a digital research space & agency run by Rob Gordon"
+          />
+          <meta property="og:title" content="Tone Row" />
+          <meta
+            property="og:description"
+            content="Tone Row is a digital research space & agency run by Rob Gordon"
+          />
+          <meta property="og:image" content="https://tone-row.com/smiley.png" />
         </Head>
         <main>
           <p>
