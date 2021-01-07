@@ -1,12 +1,12 @@
 {
   "color": {
-    "background": { "input": { "type": "color" }, "value": "#170033" },
-    "foreground": { "input": { "type": "color" }, "value": "#f3f99f" }
+    "background": { "input": { "type": "color" }, "value": "#0a0a0a" },
+    "foreground": { "input": { "type": "color" }, "value": "#f5f5f5" }
   },
   "container": {
     "desktop": {
       "input": { "max": 5000, "min": 100, "type": "range" },
-      "value": "941"
+      "value": "710"
     },
     "mobile": {
       "input": { "max": 1000, "min": 10, "type": "range" },
@@ -14,10 +14,11 @@
     }
   },
   "font": {
+    "default": { "family": { "value": "F37 Bolton Test" } },
     "lineHeight": {
       "desktop": {
         "input": { "max": 100, "min": 10, "type": "range" },
-        "value": "64"
+        "value": "47"
       },
       "mobile": {
         "input": { "max": 30, "min": 10, "type": "range" },
@@ -27,7 +28,7 @@
     "size": {
       "desktop": {
         "input": { "max": 100, "min": 10, "type": "range" },
-        "value": "46"
+        "value": "34"
       },
       "mobile": {
         "input": { "max": 30, "min": 10, "type": "range" },
@@ -38,7 +39,7 @@
   "spacing": {
     "desktop": {
       "input": { "max": 100, "min": 10, "type": "range" },
-      "value": "47"
+      "value": "86"
     },
     "mobile": {
       "input": { "max": 30, "min": 10, "type": "range" },

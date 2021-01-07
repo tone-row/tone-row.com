@@ -15,6 +15,9 @@ const schema = {
     },
   },
   font: {
+    default: {
+      family: { value: "Inria Sans" },
+    },
     size: {
       mobile: { value: 15, input: { type: "range", min: 10, max: 30 } },
       desktop: { value: 25, input: { type: "range", min: 10, max: 100 } },

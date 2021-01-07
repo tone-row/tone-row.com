@@ -6,7 +6,7 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: grayscale;
-  font-family: "IBM Plex Sans", sans-serif;
+  font-family: var(--font-default-family), "IBM Plex Sans", sans-serif;
 }
 
 body {
