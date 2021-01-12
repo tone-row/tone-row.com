@@ -24,8 +24,7 @@ export default function Home() {
         </Head>
         <main>
           <p>
-            Tone Row lassos the digital work and collaboration of Rob Gordon{" "}
-            <a href="https://twitter.com/rob______gordon">@rob______gordon</a>
+            Tone Row lassos the digital work and collaboration of Rob Gordon
           </p>
           <p>
             Sometimes an agency. Otherwise a space for research and
