@@ -2740,10 +2740,10 @@ platform@1.3.3:
   resolved "https://registry.yarnpkg.com/platform/-/platform-1.3.3.tgz#646c77011899870b6a0903e75e997e8e51da7461"
   integrity sha1-ZGx3ARiZhwtqCQPnXpl+jlHadGE=
 
-playgoer@^0.0.6:
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/playgoer/-/playgoer-0.0.6.tgz#2dc86510e37b16e609e048a34a58af23247a01e3"
-  integrity sha512-As6IEai+FNP/4xER+WHkjgjB7YPQKgQbzAR5dxLeFFpByzufEKx9XPdreit6M9tKDaQNQLGKg2cOjautYh6yzQ==
+playgoer@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/playgoer/-/playgoer-0.0.8.tgz#09e43d6710fe8a08640381029c8c473207e7f49e"
+  integrity sha512-A3blFm1nsZazbQffpEpj7a/8H6ZV2m5rOTTi5rJDePczs9xVPi4lkQvLZ7NoBzrOBlti1rrUxXb0irwXJ3gY+g==
   dependencies:
     clone "^2.1.2"
     deepmerge "^4.2.2"

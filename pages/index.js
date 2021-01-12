@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <Playgoer schema={schema} styles={styles} settings={{ public: true }}>
       <div>
-        <CssCustomProperties />
+        <CssCustomProperties usePortal={false} />
         <Head>
           <title>Tone Row</title>
           <link rel="icon" href="/favicon.ico" />
