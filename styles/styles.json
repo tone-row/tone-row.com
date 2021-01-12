@@ -1,7 +1,7 @@
 {
   "color": {
-    "background": { "input": { "type": "color" }, "value": "#0a0a0a" },
-    "foreground": { "input": { "type": "color" }, "value": "#f5f5f5" }
+    "background": { "input": { "type": "color" }, "value": "#ffffff" },
+    "foreground": { "input": { "type": "color" }, "value": "#000000" }
   },
   "container": {
     "desktop": {
@@ -14,7 +14,7 @@
     }
   },
   "font": {
-    "default": { "family": { "value": "F37 Bolton Test" } },
+    "default": { "family": { "value": "Helvetica" } },
     "lineHeight": {
       "desktop": {
         "input": { "max": 100, "min": 10, "type": "range" },
@@ -39,11 +39,11 @@
   "spacing": {
     "desktop": {
       "input": { "max": 100, "min": 10, "type": "range" },
-      "value": "86"
+      "value": "55"
     },
     "mobile": {
       "input": { "max": 30, "min": 10, "type": "range" },
-      "value": "25"
+      "value": "24"
     }
   }
 }
