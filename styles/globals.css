@@ -30,20 +30,6 @@ html {
 body {
   background: var(--color-background);
   color: var(--color-foreground);
-  background-image: url("../public/smiley.svg");
-  background-size: 70px 60px;
-  background-repeat: repeat;
-  animation: float 1s linear 0s infinite forwards normal;
-}
-
-@keyframes float {
-  from {
-    background-position: 0px 0px;
-  }
-
-  to {
-    background-position: 70px 60px;
-  }
 }
 
 main {
@@ -105,6 +91,7 @@ main {
 a {
   text-decoration: none;
   color: #1d90ff;
+  color: #1d42ff;
   /* color: inherit; */
   /* opacity: 0.5; */
 }
