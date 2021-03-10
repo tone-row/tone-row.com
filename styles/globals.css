@@ -1,20 +1,59 @@
+@font-face {
+  font-family: "nm";
+  src: url("/nm.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: grayscale;
-  font-family: var(--font-default-family), "IBM Plex Sans", sans-serif;
+  font-family: "nm", sans-serif;
+}
+
+:root {
+  --color-background: white;
+  --color-foreground: black;
 }
 
 body {
   background: var(--color-background);
   color: var(--color-foreground);
+  background-image: url("../public/smiley.svg");
+  background-size: 70px 60px;
+  background-repeat: repeat;
+  animation: float 1s linear 0s infinite forwards normal;
+}
+
+@keyframes float {
+  from {
+    background-position: 0px 0px;
+  }
+
+  to {
+    background-position: 70px 60px;
+  }
 }
 
 main {
+  --font-size-mobile: 18;
+  --font-size-desktop: 40;
+  --container-mobile: 440;
+  --container-desktop: 940;
+  --spacing-mobile: 20;
+  --spacing-desktop: 40;
+
   /* fluid container */
   --c-mobile: calc(var(--container-mobile) * 1px);
   --c-desktop: calc(var(--container-desktop) * 1px);
@@ -65,10 +104,40 @@ main {
 
 a {
   text-decoration: none;
-  color: inherit;
-  opacity: 0.5;
+  color: #1d90ff;
+  /* color: inherit; */
+  /* opacity: 0.5; */
 }
 
-a:hover {
+/* a:hover {
   opacity: 1;
+} */
+
+.bi {
+  font-weight: 700;
+  font-style: italic;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-image: repeating-linear-gradient(
+    33deg,
+    white 0px,
+    white 8px,
+    black 8px,
+    black 16px
+  );
+}
+
+h2 {
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--font-size);
+}
+
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing);
 }
