@@ -1,7 +1,14 @@
 @font-face {
   font-family: "nm";
-  src: url("/nm.woff2") format("woff2");
+  src: url("/NeueMontreal-Regular.woff2") format("woff2");
   font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "nm";
+  src: url("/NeueMontreal-Bold.woff2") format("woff2");
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -20,6 +27,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: grayscale;
   font-family: "nm", sans-serif;
+  /* color: #1d90ff;
+  color: #1d42ff; */
+  --accent: #3d1be2;
 }
 
 :root {
@@ -86,19 +96,19 @@ main {
   padding: var(--spacing);
   display: grid;
   gap: var(--spacing);
+  place-content: start normal;
 }
 
 a {
   text-decoration: none;
-  color: #1d90ff;
-  color: #1d42ff;
-  /* color: inherit; */
-  /* opacity: 0.5; */
+  color: var(--accent);
 }
 
-/* a:hover {
-  opacity: 1;
-} */
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 3px;
+}
 
 .bi {
   font-weight: 700;

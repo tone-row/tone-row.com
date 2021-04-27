@@ -19,8 +19,8 @@ export default function Home() {
       </Head>
       <main>
         <p>
-          Tone Row is a space for web development research with a focus on
-          programming for social-impact.
+          <strong>Tone Row</strong> is a space for web development research with
+          a focus on programming for social-impact.
         </p>
         <div className="projects-list">
           <span>
@@ -30,7 +30,7 @@ export default function Home() {
         </div>
         <p>
           Find us on <a href="https://github.com/tone-row">Github</a> and{" "}
-          <a href="https://twitter.com/row_tone">Twitter</a>
+          <a href="https://twitter.com/tone_row_">Twitter</a>
         </p>
         <p>For more info reach out to rob.gordon@tone-row.com</p>
       </main>
