@@ -7,13 +7,10 @@ import { GetStaticProps } from "next";
 import { getPosts, Post } from "../lib/api";
 import BlogHeader from "../components/BlogHeader";
 import { Box } from "../slang";
-import styled from "styled-components";
 
 type Contract = {
   posts: Post[];
 };
-
-const BlogSection = styled(Section)``;
 
 const g = 4;
 
