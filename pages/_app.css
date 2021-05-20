@@ -1,0 +1,47 @@
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smooth: grayscale;
+  font-family: Neue Montreal;
+
+  --maxSize: 1440;
+  --minSize: 320;
+  --spacerMin: 10;
+  --spacerMax: 16;
+  --spacer: clamp(
+    calc(1px * var(--spacerMin)),
+    calc(
+      (1px * var(--spacerMin)) + (var(--spacerMax) - var(--spacerMin)) *
+        ((100vw - (1px * var(--minSize))) / (var(--maxSize) - var(--minSize)))
+    ),
+    calc(1px * var(--spacerMax))
+  );
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  /* text-underline-offset: 2px;
+  text-decoration-thickness: 2px; */
+}
+
+a[href^="http"] {
+  text-decoration: underline;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.wideText {
+  font-weight: normal;
+  text-transform: uppercase;
+  --stretch: 1.25;
+  transform: scaleX(var(--stretch));
+  width: calc(100% / var(--stretch));
+  transform-origin: 0;
+}
