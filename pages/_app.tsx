@@ -3,12 +3,23 @@ import "./_app.css";
 import "../slang/slang.css";
 import { AppProps } from "next/app";
 import Layout from "../components/Layout";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Head>
+        <script
+          async
+          defer
+          data-domain="tone-row.com"
+          src="https://plausible.io/js/plausible.js"
+        />
+      </Head>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
 
