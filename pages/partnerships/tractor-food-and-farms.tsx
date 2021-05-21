@@ -2,7 +2,7 @@ import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
 import { Container, Page, Section } from "../../components/structure";
-import { Extralarge, Large, Medium } from "../../components/typography";
+import { Extralarge, Medium } from "../../components/typography";
 import { Box } from "../../slang";
 
 const LeftAlignedContainer = styled(Container)`

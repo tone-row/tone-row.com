@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/dist/client/router";
 import { Box } from "../slang";
 import Smiley from "./smiley.svg";
@@ -21,7 +20,6 @@ const Hand = styled.span`
 
 export default function Layout({ children }: { children: ReactNode }) {
   const { pathname } = useRouter();
-  const animationKey = pathname.split("/")[1];
   return (
     <Box p={padding}>
       <Box
