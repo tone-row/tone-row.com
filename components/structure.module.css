@@ -1,5 +1,5 @@
 .Container {
-  max-width: 600px;
+  max-width: 550px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
@@ -17,4 +17,10 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+.Page img {
+  max-width: 100%;
+  height: auto;
+  background-color: ghostwhite;
 }

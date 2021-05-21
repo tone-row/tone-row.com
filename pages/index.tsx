@@ -116,5 +116,7 @@ const BlogPostLink = styled.a`
   text-decoration: none;
   .underline {
     text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
   }
 `;

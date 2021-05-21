@@ -54,8 +54,16 @@ export default function Tractor() {
         </LeftAlignedContainer>
         <LeftAlignedContainer>
           <Page>
-            <img src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0/v1621607908/tone-row-2021/tractor.jpg" />
-            <img src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0/v1621544380/tone-row-2021/diqx2a2vdek4siba9mvr.jpg" />
+            <img
+              src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0/v1621607908/tone-row-2021/tractor.jpg"
+              width={3840}
+              height={2160}
+            />
+            <img
+              src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0/v1621544380/tone-row-2021/diqx2a2vdek4siba9mvr.jpg"
+              width={3840}
+              height={2160}
+            />
             {/* <Section>
               <Large as="h2">Related Blog Articles</Large>
             </Section> */}

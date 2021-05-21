@@ -6,8 +6,17 @@ export const Page = ({
   gap = 10,
   as = "div",
   content = "start normal",
+  className = "",
   ...props
-}: BoxProps) => <Box content={content} as={as} gap={gap} {...props} />;
+}: BoxProps) => (
+  <Box
+    content={content}
+    as={as}
+    gap={gap}
+    className={[styles.Page, className].join(" ")}
+    {...props}
+  />
+);
 
 export const Section = ({
   gap = 5,
