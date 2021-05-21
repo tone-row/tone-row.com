@@ -21,7 +21,7 @@ const Hand = styled.span`
 export default function Layout({ children }: { children: ReactNode }) {
   const { pathname } = useRouter();
   return (
-    <Box p={padding} className={styles.Layout}>
+    <Box px={padding} py={3} className={styles.Layout}>
       <Box
         as="nav"
         template="none / 1fr auto"
@@ -40,6 +40,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               flow="column"
               gap={2}
               items="center"
+              px={4}
               className={styles.BackHome}
             >
               <Hand>{`👈`}</Hand>

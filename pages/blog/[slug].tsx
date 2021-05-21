@@ -3,7 +3,7 @@ import Head from "next/head";
 import React from "react";
 import { MDX } from "../../components/MDX";
 import { Container, Page, Section } from "../../components/structure";
-import { Extralarge, Medium } from "../../components/typography";
+import { Extralarge, Medium, Small } from "../../components/typography";
 import { getPostBySlug, getPostPaths, Post, prepareMDX } from "../../lib/api";
 import { formatDate } from "../../lib/helpers";
 import { Box } from "../../slang";
@@ -21,7 +21,7 @@ export default function Slug({ post, source = "" }: Contract) {
       <Head>
         <title>{`Tone Row – ${post.title}`}</title>
       </Head>
-      <Page pb={10} className={styles.Page}>
+      <Page pb={10} className={styles.Page} pt={3} at={{ tablet: { pt: 0 } }}>
         <Container as="header">
           <img
             src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
@@ -31,7 +31,7 @@ export default function Slug({ post, source = "" }: Contract) {
         </Container>
         <Container>
           <Box gap={3} as="header">
-            <Medium>{formatDate(post.published)}</Medium>
+            <Small>{formatDate(post.published)}</Small>
             <Extralarge as="h1">{post.title}</Extralarge>
           </Box>
         </Container>

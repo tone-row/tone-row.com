@@ -4,6 +4,7 @@
 
 .BackHome {
   text-decoration: none;
+  transition: text-shadow 0.25s linear;
 }
 
 .Layout {
@@ -11,4 +12,15 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+.BackHome:hover {
+  animation: wiggle 0.75s ease-in-out infinite;
+  text-shadow: 5px 5px 5px grey;
+}
+
+@keyframes wiggle {
+  50% {
+    transform: translateX(-15px);
+  }
 }
