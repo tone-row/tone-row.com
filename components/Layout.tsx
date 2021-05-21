@@ -21,7 +21,7 @@ const Hand = styled.span`
 export default function Layout({ children }: { children: ReactNode }) {
   const { pathname } = useRouter();
   return (
-    <Box p={padding}>
+    <Box p={padding} className={styles.Layout}>
       <Box
         as="nav"
         template="none / 1fr auto"
