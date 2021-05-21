@@ -14,12 +14,13 @@ export default function Tractor() {
     <>
       <Meta
         pageTitle={`Partnerships: Tractor Food & Farms`}
-        description={`Tractor Food &amp; Farms operates food relief programs to help
+        description={`Tractor Food & Farms operates food relief programs to help
                 food insecure community members in Western North Carolina.`}
         image={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_550/v1621607908/tone-row-2021/tractor.jpg`}
       />
       <Box
         pt={5}
+        gap={6}
         at={{
           desktop: { template: "none / repeat(2, minmax(0, 1fr))" },
         }}
@@ -61,6 +62,11 @@ export default function Tractor() {
               src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_550/v1621607908/tone-row-2021/tractor.jpg"
               width={3840}
               height={2160}
+            />
+            <img
+              width={2122}
+              height={1352}
+              src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_550/v1621618114/tone-row-2021/jft6fj2erwjzemikakbs.png`}
             />
             <img
               src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_550/v1621544380/tone-row-2021/diqx2a2vdek4siba9mvr.jpg"
