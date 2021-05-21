@@ -496,11 +496,11 @@ body {
 
 :root {
 	--base-font-family:Neue Montreal;
-	--base-font-size-px:18px;
-	--base-font-size:18;
+	--base-font-size-px:22px;
+	--base-font-size:22;
 	--base-font-size-mobile-px:16px;
 	--base-font-size-mobile:16;
-	--base-font-line-height:1.15;
+	--base-font-line-height:1.2;
 	--base-font-line-height-mobile:1.15;
 	--spacer-px:4px;
 	--spacer:4;
@@ -517,7 +517,7 @@ body {
 	--error-correction-bottom-scale:1;
 	--type-scale-base:1.16;
 	--type-scale-base-mobile:1.16;
-	--inverse-type-scale-line-height:1;
+	--inverse-type-scale-line-height:0.98;
 	--inverse-type-scale-line-height-mobile:1;
 	--mapping-to-user-agent-headers:4;
 	--smallest-border-radius-px:3px;
@@ -550,18 +550,18 @@ body {
 	--mobile-multiplier-6:2.436396322815999;
 	--mobile-multiplier-7:2.8262197344665587;
 	--mobile-multiplier-8:3.2784148919812077;
-	--lh-multiplier--3:1;
-	--lh-multiplier--2:1;
-	--lh-multiplier--1:1;
+	--lh-multiplier--3:1.062482469039261;
+	--lh-multiplier--2:1.0412328196584757;
+	--lh-multiplier--1:1.0204081632653061;
 	--lh-multiplier-0:1;
-	--lh-multiplier-1:1;
-	--lh-multiplier-2:1;
-	--lh-multiplier-3:1;
-	--lh-multiplier-4:1;
-	--lh-multiplier-5:1;
-	--lh-multiplier-6:1;
-	--lh-multiplier-7:1;
-	--lh-multiplier-8:1;
+	--lh-multiplier-1:0.98;
+	--lh-multiplier-2:0.9603999999999999;
+	--lh-multiplier-3:0.9411919999999999;
+	--lh-multiplier-4:0.92236816;
+	--lh-multiplier-5:0.9039207967999999;
+	--lh-multiplier-6:0.8858423808639999;
+	--lh-multiplier-7:0.8681255332467199;
+	--lh-multiplier-8:0.8507630225817855;
 	--lh-mobile-multiplier--3:1;
 	--lh-mobile-multiplier--2:1;
 	--lh-mobile-multiplier--1:1;
@@ -747,6 +747,12 @@ border-radius: calc(var(--smallest-border-radius-px) * var(--rad));
 .slang-box.rad_hover:hover {
 border-radius: calc(var(--smallest-border-radius-px) * var(--rad_hover));
 }
+.slang-box.area {
+grid-area: var(--area);
+}
+.slang-box.area_hover:hover {
+grid-area: var(--area_hover);
+}
 @media(min-width: 768px) {
 .slang-box.flow-tablet {
 grid-auto-flow: var(--flow-tablet);
@@ -885,6 +891,12 @@ border-radius: calc(var(--smallest-border-radius-px) * var(--rad-tablet));
 }
 .slang-box.rad-tablet_hover:hover {
 border-radius: calc(var(--smallest-border-radius-px) * var(--rad-tablet_hover));
+}
+.slang-box.area-tablet {
+grid-area: var(--area-tablet);
+}
+.slang-box.area-tablet_hover:hover {
+grid-area: var(--area-tablet_hover);
 }
 }
 @media(min-width: 1024px) {
@@ -1025,6 +1037,12 @@ border-radius: calc(var(--smallest-border-radius-px) * var(--rad-desktop));
 }
 .slang-box.rad-desktop_hover:hover {
 border-radius: calc(var(--smallest-border-radius-px) * var(--rad-desktop_hover));
+}
+.slang-box.area-desktop {
+grid-area: var(--area-desktop);
+}
+.slang-box.area-desktop_hover:hover {
+grid-area: var(--area-desktop_hover);
 }
 }
 .slang-type.weight {

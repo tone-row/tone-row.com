@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { Type, TypeProps } from "../slang";
 
 export const Small = forwardRef(
-  ({ as = "p", size = -1, ...props }: TypeProps, ref) => (
+  ({ as = "p", size = -2, ...props }: TypeProps, ref) => (
     <Type as={as} size={size} {...props} ref={ref} />
   )
 );
@@ -12,7 +12,7 @@ export const Medium = forwardRef(
   )
 );
 export const Large = forwardRef(
-  ({ as = "p", size = 2, ...props }: TypeProps, ref) => (
+  ({ as = "p", size = 1, ...props }: TypeProps, ref) => (
     <Type as={as} size={size} {...props} ref={ref} />
   )
 );
@@ -22,7 +22,7 @@ export const WideLarge = forwardRef(
   )
 );
 export const Extralarge = forwardRef(
-  ({ as = "p", size = 4, ...props }: TypeProps, ref) => (
+  ({ as = "p", size = 6, ...props }: TypeProps, ref) => (
     <Type as={as} size={size} {...props} ref={ref} />
   )
 );

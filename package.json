@@ -10,7 +10,7 @@
     "theme:watch": "yarn theme -w"
   },
   "dependencies": {
-    "@tone-row/slang": "^1.2.35",
+    "@tone-row/slang": "^1.2.36",
     "date-fns": "^2.21.3",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",
@@ -27,6 +27,7 @@
     "@types/react": "^17.0.2",
     "@types/react-dom": "^17.0.1",
     "@types/styled-components": "^5.1.9",
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "babel-plugin-styled-components": "^1.12.0",
     "concurrently": "^6.1.0",
     "typescript": "4.0"

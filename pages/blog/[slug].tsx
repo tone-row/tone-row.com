@@ -1,11 +1,12 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import React from "react";
-import BlogHeader from "../../components/BlogHeader";
-import BlogLayout from "../../components/BlogLayout";
 import { MDX } from "../../components/MDX";
 import { Container, Page, Section } from "../../components/structure";
+import { Extralarge, Medium } from "../../components/typography";
 import { getPostBySlug, getPostPaths, Post, prepareMDX } from "../../lib/api";
+import { formatDate } from "../../lib/helpers";
+import { Box } from "../../slang";
 
 type Contract = {
   post?: Post;
@@ -19,16 +20,20 @@ export default function Slug({ post, source = "" }: Contract) {
       <Head>
         <title>{`Tone Row – ${post.title}`}</title>
       </Head>
-      <BlogLayout>
-        <Page>
-          <Container>
-            <BlogHeader post={post} />
-          </Container>
-          <Section>
-            <MDX source={source} />
-          </Section>
-        </Page>
-      </BlogLayout>
+      <Page pb={10}>
+        <Container>
+          <img src={post.preview} />
+        </Container>
+        <Container>
+          <Box gap={3} as="header">
+            <Medium>{formatDate(post.published)}</Medium>
+            <Extralarge as="h1">{post.title}</Extralarge>
+          </Box>
+        </Container>
+        <Section>
+          <MDX source={source} />
+        </Section>
+      </Page>
     </>
   );
 }

@@ -22,11 +22,16 @@ a {
   text-decoration: none;
   /* text-underline-offset: 2px;
   text-decoration-thickness: 2px; */
-}
-
-a[href^="http"] {
   text-decoration: underline;
 }
+
+/* a[href^="http"] {
+  text-decoration: underline;
+}
+
+a:not([href^="http"]) {
+  color: mediumblue;
+} */
 
 * {
   margin: 0;

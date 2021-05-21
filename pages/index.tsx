@@ -1,18 +1,19 @@
 import React from "react";
 import { Page, Section } from "../components/structure";
-import { Extralarge, Large, Medium } from "../components/typography";
+import { Large, Small } from "../components/typography";
 import Link from "next/link";
 import Head from "next/head";
 import { GetStaticProps } from "next";
 import { getPosts, Post } from "../lib/api";
-import BlogHeader from "../components/BlogHeader";
 import { Box } from "../slang";
+import { formatDate } from "../lib/helpers";
+import styled from "styled-components";
 
 type Contract = {
   posts: Post[];
 };
 
-const g = 4;
+const gap = 10;
 
 export default function Index({ posts }: Contract) {
   return (
@@ -20,15 +21,9 @@ export default function Index({ posts }: Contract) {
       <Head>
         <title>Tone Row</title>
       </Head>
-      <Page>
-        <Section>
-          <Extralarge as="h1">
-            Tone Row is a space for web-development research
-            <br /> with a focus on programming for social impact.
-          </Extralarge>
-        </Section>
+      <Page pt={20}>
         <Box
-          gap={g}
+          gap={gap}
           template="none / none"
           at={{
             tablet: { template: "none / 1fr 1fr" },
@@ -39,68 +34,69 @@ export default function Index({ posts }: Contract) {
             <Large as="h2">Connect</Large>
             <Box as="ul" gap={1}>
               <li>
-                <Medium as="a" href="https://github.com/tone-row">
+                <Large as="a" href="https://github.com/tone-row">
                   Github
-                </Medium>
+                </Large>
               </li>
               <li>
-                <Medium as="a" href="https://twitter.com/tone_row_">
+                <Large as="a" href="https://twitter.com/tone_row_">
                   Twitter
-                </Medium>
+                </Large>
               </li>
               <li>
-                <Medium as="a" href="https://opencollective.com/tone-row">
+                <Large as="a" href="https://opencollective.com/tone-row">
                   Open Collective
-                </Medium>
+                </Large>
               </li>
               <li>
-                <Medium as="a" href="https://github.com/sponsors/tone-row">
+                <Large as="a" href="https://github.com/sponsors/tone-row">
                   Github Sponsors
-                </Medium>
+                </Large>
               </li>
             </Box>
           </Section>
           <Section>
             <Large as="h2">Projects</Large>
-            <Medium>
+            <Large>
               We like to develop open-source tools to improve productivity and
               developer-experiences.
-            </Medium>
+            </Large>
             <ul>
               <li>
-                <Medium as="a" href="https://flowchart.fun">
+                <Large as="a" href="https://flowchart.fun">
                   flowchart.fun
-                </Medium>
+                </Large>
               </li>
             </ul>
           </Section>
           <Section>
             <Large as="h2">Partnerships</Large>
-            <Medium>
+            <Large>
               We build apps to accelerate nonprofits and community-centered
               organizations.
-            </Medium>
+            </Large>
             <ul>
               <li>
                 <Link href="/partnerships/tractor-food-and-farms" passHref>
-                  <Medium as="a">Tractor Food &amp; Farms</Medium>
+                  <Large as="a">Tractor Food &amp; Farms</Large>
                 </Link>
               </li>
             </ul>
           </Section>
           <Section>
-            <Medium>
+            <Large>
               Say Hello!
               <br />
               <a href="mailto:bonjour@tone-row.com">bonjour@tone-row.com</a>
-            </Medium>
+            </Large>
           </Section>
-          <Section style={{ gridColumn: "auto / span 2" }}>
+          <Section gap={8}>
             <Large as="h2">Blog</Large>
             {posts.map((post) => (
               <Link href={`/blog/${post.slug}`} passHref key={post.slug}>
-                <Box as="a">
-                  <BlogHeader post={post} />
+                <Box as={BlogPostLink} gap={2}>
+                  <Large className="underline">{post.title}</Large>
+                  <Small>{formatDate(post.published)}</Small>
                 </Box>
               </Link>
             ))}
@@ -115,3 +111,10 @@ export const getStaticProps: GetStaticProps<Contract> = async () => {
   const posts = await getPosts();
   return { props: { posts } };
 };
+
+const BlogPostLink = styled.a`
+  text-decoration: none;
+  .underline {
+    text-decoration: underline;
+  }
+`;
