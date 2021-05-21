@@ -3,7 +3,7 @@ import Head from "next/head";
 import React from "react";
 import { MDX } from "../../components/MDX";
 import { Container, Page, Section } from "../../components/structure";
-import { Extralarge, Medium, Small } from "../../components/typography";
+import { Extralarge, Small } from "../../components/typography";
 import { getPostBySlug, getPostPaths, Post, prepareMDX } from "../../lib/api";
 import { formatDate } from "../../lib/helpers";
 import { Box } from "../../slang";
