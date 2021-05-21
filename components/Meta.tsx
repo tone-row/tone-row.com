@@ -5,7 +5,7 @@ export default function Meta({
   children,
   pageTitle,
   description = "Tone Row is a space for web-development research with a focus on programming for social impact.",
-  image = "https://tone-row.com/ogimg.png",
+  image = "https://res.cloudinary.com/tone-row/image/upload/v1621619004/tone-row-2021/x6tprjbbtebz0vyavgek.png",
 }: {
   children?: ReactNode;
   pageTitle?: string;
