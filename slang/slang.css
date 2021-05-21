@@ -495,7 +495,7 @@ body {
     --errorBottomMultiplier: var(--error-bottom-multiplier-7); }
 
 :root {
-	--base-font-family:Neue Montreal;
+	--base-font-family:nm;
 	--base-font-size-px:22px;
 	--base-font-size:22;
 	--base-font-size-mobile-px:16px;
