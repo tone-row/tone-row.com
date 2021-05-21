@@ -2,12 +2,12 @@ import React from "react";
 import { Page, Section } from "../components/structure";
 import { Large, Small } from "../components/typography";
 import Link from "next/link";
-import Head from "next/head";
 import { GetStaticProps } from "next";
 import { getPosts, Post } from "../lib/api";
 import { Box } from "../slang";
 import { formatDate } from "../lib/helpers";
 import styled from "styled-components";
+import Meta from "../components/Meta";
 
 type Contract = {
   posts: Post[];
@@ -18,9 +18,7 @@ const gap = 10;
 export default function Index({ posts }: Contract) {
   return (
     <>
-      <Head>
-        <title>Tone Row</title>
-      </Head>
+      <Meta />
       <Page pt={20}>
         <Box
           gap={gap}

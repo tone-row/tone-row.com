@@ -1,6 +1,6 @@
-import Head from "next/head";
 import React from "react";
 import styled from "styled-components";
+import Meta from "../../components/Meta";
 import { Container, Page, Section } from "../../components/structure";
 import { Extralarge, Medium } from "../../components/typography";
 import { Box } from "../../slang";
@@ -12,9 +12,12 @@ const LeftAlignedContainer = styled(Container)`
 export default function Tractor() {
   return (
     <>
-      <Head>
-        <title>Tone Row Partnerships – Tractor Food &amp; Farms</title>
-      </Head>
+      <Meta
+        pageTitle={`Partnerships: Tractor Food & Farms`}
+        description={`Tractor Food &amp; Farms operates food relief programs to help
+                food insecure community members in Western North Carolina.`}
+        image={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_550/v1621607908/tone-row-2021/tractor.jpg`}
+      />
       <Box
         pt={5}
         at={{
