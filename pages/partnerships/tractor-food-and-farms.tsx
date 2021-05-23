@@ -97,9 +97,9 @@ export const getStaticProps: GetStaticProps<Contract> = async () => {
   const posts = await getPosts();
   return {
     props: {
-      posts: posts.filter(
-        (post) => post.partnership === "tractor-food-and-farms"
-      ),
+      posts: posts
+        .filter((post) => post.partnership === "tractor-food-and-farms")
+        .filter((post) => post.status === "published"),
     },
   };
 };

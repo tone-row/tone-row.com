@@ -98,6 +98,8 @@ export default function Index({ posts }: Contract) {
 }
 
 export const getStaticProps: GetStaticProps<Contract> = async () => {
-  const posts = await getPosts();
+  const posts = (await getPosts()).filter(
+    (post) => post.status === "published"
+  );
   return { props: { posts } };
 };

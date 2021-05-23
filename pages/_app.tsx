@@ -15,6 +15,8 @@ function MyApp({ Component, pageProps }: AppProps) {
           data-domain="tone-row.com"
           src="https://plausible.io/js/plausible.js"
         />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="mask-icon" href="favicon.svg" color="#000000" />
       </Head>
       <Layout>
         <Component {...pageProps} />

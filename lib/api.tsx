@@ -11,6 +11,7 @@ export interface Post {
   preview: string;
   description: string;
   partnership?: string;
+  status: "published" | "draft";
 }
 
 const POSTS_DIRECTORY = path.join(process ? process.cwd() : "./", "content");
