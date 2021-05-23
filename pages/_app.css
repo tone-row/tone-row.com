@@ -56,3 +56,62 @@ ul {
   width: calc(100% / var(--stretch));
   transform-origin: 0;
 }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #000000;
+    --color-foreground: #ffffff;
+  }
+  .btnDarkMode svg {
+    transform: perspective(50px) translate3d(0, 0, 0px);
+  }
+  .btnLightMode svg {
+    transform: perspective(50px) translate3d(0, 0, -20px);
+  }
+}
+
+html[data-mode="light"] {
+  --color-background: #ffffff;
+  --color-foreground: #000000;
+}
+html[data-mode="light"] .btnDarkMode svg {
+  transform: perspective(50px) translate3d(0, 0, -20px);
+}
+
+html[data-mode="light"] .btnLightMode svg {
+  transform: perspective(50px) translate3d(0, 0, 0px);
+}
+
+html[data-mode="dark"] {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+}
+
+.btnDarkMode {
+  width: 25px;
+  height: 32px;
+}
+.btnLightMode {
+  width: 40px;
+  height: 40px;
+}
+
+.btnDarkMode svg {
+  transform-origin: 50% 50%;
+}
+.btnLightMode svg {
+  transform-origin: 50% 50%;
+}
+
+html[data-mode="dark"] .btnDarkMode svg {
+  transform: perspective(50px) translate3d(0, 0, 0px);
+}
+
+html[data-mode="dark"] .btnLightMode svg {
+  transform: perspective(50px) translate3d(0, 0, -20px);
+}
+
+.appearanceWrapper:hover .btnDarkMode svg,
+.appearanceWrapper:hover .btnLightMode svg {
+  transform: perspective(50px) translate3d(0, 0, -20px);
+}

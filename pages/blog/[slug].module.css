@@ -1,0 +1,9 @@
+.Page hr {
+  max-width: 600px;
+  height: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border: none;
+  border-top: dotted 10px whitesmoke;
+}

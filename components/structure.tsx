@@ -19,7 +19,7 @@ export const Page = ({
 );
 
 export const Section = ({
-  gap = 5,
+  gap = 4,
   as = "section",
   content = "start normal",
   ...props

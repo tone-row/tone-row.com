@@ -16,11 +16,35 @@
 
 .BackHome:hover {
   animation: wiggle 0.75s ease-in-out infinite;
-  text-shadow: 5px 5px 5px grey;
+  text-shadow: 5px 5px 5px rgba(128, 128, 128, 0.226);
 }
 
 @keyframes wiggle {
   50% {
     transform: translateX(-15px);
   }
+}
+
+.AppearanceButton svg {
+  pointer-events: bounding-box;
+  transition: transform 0.2s ease;
+}
+
+.AppearanceButton {
+  appearance: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  height: 40px;
+  width: 40px;
+  line-height: 51px;
+}
+
+.AppearanceButton.Icon:hover svg {
+  transform: perspective(20px) translate3d(0, 0, 0);
+}
+
+.Icon path,
+.Icon circle {
+  stroke: var(--color-foreground);
 }

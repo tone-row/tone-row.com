@@ -10,6 +10,7 @@ export interface Post {
   slug: string;
   preview: string;
   description: string;
+  partnership?: string;
 }
 
 const POSTS_DIRECTORY = path.join(process ? process.cwd() : "./", "content");

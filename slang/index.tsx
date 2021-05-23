@@ -10,8 +10,8 @@
 
 type Breakpoints = "tablet" | "desktop";
 type Colors = 
-  | "color-background"
   | "color-foreground"
+  | "color-background"
   | "palette-black-0"
   | "palette-white-0";
 export type BoxProps = PropsWithAs<BaseBoxProps<Breakpoints, Colors>>;

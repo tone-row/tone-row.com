@@ -4,7 +4,8 @@
 	 viewBox="0 0 47 51" xml:space="preserve">
 <style type="text/css">
 	.st0{clip-path:url(#SVGID_2_);fill:none;stroke:#000000;}
-	.st1{clip-path:url(#SVGID_2_);}
+	.st1{clip-path:url(#SVGID_2_); fill: currentColor; }
+	path {stroke:#000;}@media (prefers-color-scheme:dark) { path { stroke: #fff; } }
 </style>
 <g>
 	<defs>

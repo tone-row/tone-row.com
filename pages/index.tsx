@@ -1,13 +1,12 @@
 import React from "react";
 import { Page, Section } from "../components/structure";
-import { Large, Small } from "../components/typography";
+import { Large } from "../components/typography";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { getPosts, Post } from "../lib/api";
 import { Box } from "../slang";
-import { formatDate } from "../lib/helpers";
-import styled from "styled-components";
 import Meta from "../components/Meta";
+import PostList from "../components/PostList";
 
 type Contract = {
   posts: Post[];
@@ -88,16 +87,9 @@ export default function Index({ posts }: Contract) {
               <a href="mailto:bonjour@tone-row.com">bonjour@tone-row.com</a>
             </Large>
           </Section>
-          <Section gap={8}>
+          <Section>
             <Large as="h2">Blog</Large>
-            {posts.map((post) => (
-              <Link href={`/blog/${post.slug}`} passHref key={post.slug}>
-                <Box as={BlogPostLink} gap={2}>
-                  <Large className="underline">{post.title}</Large>
-                  <Small>{formatDate(post.published)}</Small>
-                </Box>
-              </Link>
-            ))}
+            <PostList posts={posts} />
           </Section>
         </Box>
       </Page>
@@ -109,12 +101,3 @@ export const getStaticProps: GetStaticProps<Contract> = async () => {
   const posts = await getPosts();
   return { props: { posts } };
 };
-
-const BlogPostLink = styled.a`
-  text-decoration: none;
-  .underline {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 2px;
-  }
-`;
