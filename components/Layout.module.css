@@ -28,6 +28,7 @@
 .AppearanceButton svg {
   pointer-events: bounding-box;
   transition: transform 0.2s ease;
+  width: 100%;
 }
 
 .AppearanceButton {
