@@ -18,7 +18,7 @@ export default function Index({ posts }: Contract) {
   return (
     <>
       <Meta />
-      <Page pt={20}>
+      <Page pt={10}>
         <Box
           gap={gap}
           template="none / none"

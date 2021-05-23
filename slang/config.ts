@@ -19,6 +19,7 @@ const config: Partial<SlangConfig> = {
   baseFontFamily: "nm",
   baseFontSizePx: 20,
   baseFontLineHeight: 1.33,
+  typeScaleBaseMobile: 1.1,
   inverseTypeScaleLineHeight: 0.98,
   errorCorrectionTopPx: -2,
   errorCorrectionBottomPx: -2,

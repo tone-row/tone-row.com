@@ -57,6 +57,13 @@ ul {
   transform-origin: 0;
 }
 
+.btnDarkMode svg {
+  transform: perspective(50px) translate3d(0, 0, -20px);
+}
+.btnLightMode svg {
+  transform: perspective(50px) translate3d(0, 0, 0px);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: #000000;
@@ -74,6 +81,7 @@ html[data-mode="light"] {
   --color-background: #ffffff;
   --color-foreground: #000000;
 }
+
 html[data-mode="light"] .btnDarkMode svg {
   transform: perspective(50px) translate3d(0, 0, -20px);
 }

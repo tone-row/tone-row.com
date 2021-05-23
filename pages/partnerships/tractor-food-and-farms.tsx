@@ -49,17 +49,16 @@ export default function Tractor(props: Contract) {
                 distribution of locally-grown food to food pantries in the area.
               </Medium>
               <Medium>
-                Through the app, Tractor Food &amp; Farms is able to publish
-                their direct-from-farm inventory weekly to participating food
-                pantries. Food pantries can then respond with their current
-                needs/preferences. Finally, the app then translates that
-                information into an optimal packing strategy, getting the right
-                food to the right places to minimize food waste and maximize
-                pantry efficacy.
+                Using the app, TF&amp;F is able to publish their weekly
+                inventory to participating food pantries. Food pantries can then
+                respond with their current needs/preferences. Finally, the app
+                translates that information into an optimal packing strategy,
+                getting the right food to the right places to minimize food
+                waste and maximize pantry efficacy.
               </Medium>
               <Medium>
-                This app is beginning is headed into production this Summer
-                2021. Check back for more updates about how it's progressing.
+                This app is headed into production Summer 2021. Check back for
+                more updates on how it's progressing.
               </Medium>
             </Section>
             {posts.length ? (

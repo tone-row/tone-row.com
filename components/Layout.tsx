@@ -36,7 +36,7 @@ export default function Layout({ children }: { children: ReactNode }) {
   return (
     <Box
       px={padding}
-      py={3}
+      py={6}
       className={styles.Layout}
       root
       content="start normal"
