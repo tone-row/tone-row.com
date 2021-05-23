@@ -57,6 +57,8 @@ ul {
   transform-origin: 0;
 }
 
+/* Theme & Theme buttons */
+
 .btnDarkMode svg {
   transform: perspective(50px) translate3d(0, 0, -20px);
 }
@@ -122,4 +124,28 @@ html[data-mode="dark"] .btnLightMode svg {
 .appearanceWrapper:hover .btnDarkMode svg,
 .appearanceWrapper:hover .btnLightMode svg {
   transform: perspective(50px) translate3d(0, 0, -20px);
+}
+
+/* Selection Color */
+
+::selection {
+  background: #3d1be2; /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: #3d1be2; /* Gecko Browsers */
+  color: white;
+}
+
+/* Focus States */
+:focus {
+  outline: 2px dashed var(--color-foreground);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px dashed var(--color-foreground);
 }

@@ -12,8 +12,10 @@ type Breakpoints = "tablet" | "desktop";
 type Colors = 
   | "color-foreground"
   | "color-background"
+  | "color-accent"
   | "palette-black-0"
-  | "palette-white-0";
+  | "palette-white-0"
+  | "palette-blue-0";
 export type BoxProps = PropsWithAs<BaseBoxProps<Breakpoints, Colors>>;
 export type TypeProps = PropsWithAs<BaseTypeProps<Breakpoints, Colors>>;
 const Box = forwardRefWithAs<BoxProps, "div">(BoxComponent);

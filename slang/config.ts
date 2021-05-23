@@ -3,16 +3,19 @@ import { SlangConfig } from "@tone-row/slang";
 const palette = {
   black: ["#000000"],
   white: ["#ffffff"],
+  blue: ["#3d1be2"],
 };
 
 export const colors = {
   foreground: palette.black[0],
   background: palette.white[0],
+  accent: palette.blue[0],
 };
 
 export const darkmode: typeof colors = {
   foreground: palette.white[0],
   background: palette.black[0],
+  accent: palette.blue[0],
 };
 
 const config: Partial<SlangConfig> = {

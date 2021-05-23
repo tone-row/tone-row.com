@@ -600,8 +600,10 @@ body {
 	--error-bottom-multiplier-8:1;
 	--palette-black-0:#000000;
 	--palette-white-0:#ffffff;
+	--palette-blue-0:#3d1be2;
 	--color-foreground:#000000;
 	--color-background:#ffffff;
+	--color-accent:#3d1be2;
  }
 
 .slang-box.flow {
