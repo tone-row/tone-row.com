@@ -251,10 +251,10 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@tone-row/slang@^1.2.36":
-  version "1.2.36"
-  resolved "https://registry.yarnpkg.com/@tone-row/slang/-/slang-1.2.36.tgz#19051321071f90f357dbd9abea3b4bfb51ce78fb"
-  integrity sha512-XW5Efg22BghEHQ3G0xT8snsYss3wWgtopzwuzr9OI+7asfwYI3PfLmwUsrUaZOB27GPJV7C8w7JqKXar/T67Tg==
+"@tone-row/slang@^1.2.37":
+  version "1.2.37"
+  resolved "https://registry.yarnpkg.com/@tone-row/slang/-/slang-1.2.37.tgz#fb6ef2d4ce582b7f31d0eccdfdb0a9f69e7a3031"
+  integrity sha512-sAb+zOdDRPn1mqorkVecqWmNS9i4UMGg3/3Wb2t65geSI9hSRBvyIoFiquhL0Myx90jnIIII4xEuDkDA1vrvKg==
   dependencies:
     modern-normalize "^1.0.0"
     ts-node "^9.1.1"

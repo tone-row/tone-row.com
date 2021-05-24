@@ -43,15 +43,19 @@ export default function Layout({ children }: { children: ReactNode }) {
     >
       <Box
         as="nav"
-        template="none / 1fr auto"
+        template="auto auto / auto auto"
+        gap={6}
+        at={{ tablet: { template: "none / 1fr auto" } }}
         content="start normal"
         items="start"
       >
         {pathname === "/" ? (
-          <Extralarge as="h1" className={styles.Title}>
-            Tone Row is a space for web-development research with a focus on
-            programming for social impact.
-          </Extralarge>
+          <Box area="2 / span 2" at={{ tablet: { area: "auto / auto" } }}>
+            <Extralarge as="h1" className={styles.Title}>
+              Tone Row is a space for web-development research with a focus on
+              programming for social impact.
+            </Extralarge>
+          </Box>
         ) : (
           <Link href="/" passHref>
             <Box
@@ -60,45 +64,47 @@ export default function Layout({ children }: { children: ReactNode }) {
               gap={2}
               items="center"
               px={4}
+              area="1 / 1"
               className={styles.BackHome}
+              self="center start"
             >
               <Hand>{`👈`}</Hand>
               <Small>Home</Small>
             </Box>
           </Link>
         )}
-        <Box flow="column" items="center normal">
+        <Box
+          flow="column"
+          items="center normal"
+          area="1 / 2"
+          gap={1}
+          at={{ tablet: { area: "auto / auto" } }}
+        >
           <Box
-            flow="column"
-            items="center normal"
-            className="appearanceWrapper"
+            as="button"
+            title="Set Light Mode"
+            content="center"
+            className={[
+              styles.AppearanceButton,
+              styles.Icon,
+              "btnLightMode",
+            ].join(" ")}
+            onClick={() => setAppearance("light")}
           >
-            <Box
-              as="button"
-              title="Set Light Mode"
-              content="center"
-              className={[
-                styles.AppearanceButton,
-                styles.Icon,
-                "btnLightMode",
-              ].join(" ")}
-              onClick={() => setAppearance("light")}
-            >
-              <Sun height={40} alt="Light Mode" />
-            </Box>
-            <Box
-              as="button"
-              title="Set Dark Mode"
-              content="center"
-              className={[
-                styles.AppearanceButton,
-                styles.Icon,
-                "btnDarkMode",
-              ].join(" ")}
-              onClick={() => setAppearance("dark")}
-            >
-              <Moon height={32} alt="Dark Mode" />
-            </Box>
+            <Sun height={36} alt="Light Mode" />
+          </Box>
+          <Box
+            as="button"
+            title="Set Dark Mode"
+            content="center"
+            className={[
+              styles.AppearanceButton,
+              styles.Icon,
+              "btnDarkMode",
+            ].join(" ")}
+            onClick={() => setAppearance("dark")}
+          >
+            <Moon height={29} alt="Dark Mode" />
           </Box>
           <Link href="/" passHref>
             <A className={styles.Icon}>

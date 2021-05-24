@@ -1,10 +1,11 @@
 .Title {
-  max-width: 1240px;
+  max-width: 1200px;
 }
 
 .BackHome {
   text-decoration: none;
   transition: text-shadow 0.25s linear;
+  margin-left: calc(var(--spacer-px) * -4);
 }
 
 .Layout {
@@ -27,8 +28,6 @@
 
 .AppearanceButton svg {
   pointer-events: bounding-box;
-  transition: transform 0.2s ease;
-  width: 100%;
 }
 
 .AppearanceButton {
@@ -36,15 +35,12 @@
   border: none;
   background: none;
   cursor: pointer;
-  height: 40px;
   width: 40px;
-  line-height: 51px;
 }
 
-.AppearanceButton.Icon:hover svg {
-  transform: perspective(20px) translate3d(0, 0, 0);
+.Icon {
+  font-size: 0;
 }
-
 .Icon path,
 .Icon circle {
   stroke: var(--color-foreground);

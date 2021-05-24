@@ -10,7 +10,7 @@
     "theme:watch": "yarn theme -w"
   },
   "dependencies": {
-    "@tone-row/slang": "^1.2.36",
+    "@tone-row/slang": "^1.2.37",
     "date-fns": "^2.21.3",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",

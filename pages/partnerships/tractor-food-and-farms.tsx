@@ -34,7 +34,7 @@ export default function Tractor(props: Contract) {
         }}
       >
         <LeftAlignedContainer>
-          <Page>
+          <Page gap={6}>
             <Box as="header" gap={3}>
               <Medium>Partnerships</Medium>
               <Extralarge as="h1">Tractor Food &amp; Farms</Extralarge>
@@ -45,16 +45,19 @@ export default function Tractor(props: Contract) {
                 food insecure community members in Western North Carolina.
               </Medium>
               <Medium>
-                Together, we designed and built an app which helps their
-                distribution of locally-grown food to food pantries in the area.
+                Together, Tone Row and Tractor designed & built an application
+                to help with their distribution of locally-grown food to food
+                pantries in the area.
               </Medium>
               <Medium>
-                Using the app, TF&amp;F is able to publish their weekly
-                inventory to participating food pantries. Food pantries can then
-                respond with their current needs/preferences. Finally, the app
-                translates that information into an optimal packing strategy,
-                getting the right food to the right places to minimize food
-                waste and maximize pantry efficacy.
+                Using the app, Tractor publishes their weekly inventory to
+                participating food pantries. Food pantries respond with the
+                current needs/preferences of the community members they serve.
+              </Medium>
+              <Medium>
+                Finally, the app translates that information into an optimal
+                food packing strategy, getting the right food to the right
+                places to minimize food waste and maximize pantry efficacy.
               </Medium>
               <Medium>
                 This app is headed into production Summer 2021. Check back for
@@ -70,15 +73,15 @@ export default function Tractor(props: Contract) {
           </Page>
         </LeftAlignedContainer>
         <LeftAlignedContainer>
-          <Page>
+          <Page gap={3}>
             <img
               src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621607908/tone-row-2021/tractor.jpg"
               width={3840}
               height={2160}
             />
             <img
-              width={2122}
-              height={1352}
+              width={1200}
+              height={765}
               src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621618114/tone-row-2021/jft6fj2erwjzemikakbs.png`}
             />
             <img
