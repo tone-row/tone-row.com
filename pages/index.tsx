@@ -96,7 +96,7 @@ export default function Index({ posts }: Contract) {
             <Large>
               Say Hello!
               <br />
-              <a href="mailto:bonjour@tone-row.com">bonjour@tone-row.com</a>
+              bonjour@tone-row.com
             </Large>
           </Section>
         </Box>

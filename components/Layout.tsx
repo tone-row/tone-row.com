@@ -82,7 +82,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         >
           <Box
             as="button"
-            title="Set Light Mode"
+            aria-label="Set Light Mode"
             content="center"
             className={[
               styles.AppearanceButton,
@@ -95,7 +95,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           </Box>
           <Box
             as="button"
-            title="Set Dark Mode"
+            aria-label="Set Dark Mode"
             content="center"
             className={[
               styles.AppearanceButton,
@@ -107,7 +107,7 @@ export default function Layout({ children }: { children: ReactNode }) {
             <Moon height={29} alt="Dark Mode" />
           </Box>
           <Link href="/" passHref>
-            <A className={styles.Icon}>
+            <A className={styles.Icon} aria-label="Home">
               <Smiley height={40} alt="Home" />
             </A>
           </Link>

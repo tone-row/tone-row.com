@@ -41,8 +41,11 @@ export default function Tractor(props: Contract) {
             </Box>
             <Section>
               <Medium>
-                Tractor Food &amp; Farms operates food relief programs to help
-                food insecure community members in Western North Carolina.
+                <a href="http://tractorfoodandfarms.com/" target="_blank">
+                  Tractor Food &amp; Farms
+                </a>{" "}
+                operates food relief programs to help food insecure community
+                members in Western North Carolina.
               </Medium>
               <Medium>
                 Together, Tone Row and Tractor designed & built an application
