@@ -25,6 +25,7 @@ export default function Tractor(props: Contract) {
         description={`Tractor Food & Farms operates food relief programs to help
                 food insecure community members in Western North Carolina.`}
         image={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621607908/tone-row-2021/tractor.jpg`}
+        url="/partnerships/tractor-food-and-farms"
       />
       <Box
         pt={5}

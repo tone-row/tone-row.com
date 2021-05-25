@@ -22,6 +22,7 @@ export default function Slug({ post, source = "" }: Contract) {
         pageTitle={`Blog: ${post.title}`}
         image={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
         description={post.description}
+        url={`/blog/${post.slug}`}
       />
       <Page pb={10} className={styles.Page} pt={3} at={{ tablet: { pt: 0 } }}>
         <Container as="header">
