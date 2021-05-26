@@ -21,8 +21,8 @@ export default function Tractor(props: Contract) {
   return (
     <>
       <Meta
-        pageTitle={`Partnerships: Tractor Food & Farms`}
-        description={`Tractor Food & Farms operates food relief programs to help
+        pageTitle={`Partnerships: TRACTOR Food & Farms`}
+        description={`TRACTOR Food & Farms operates food relief programs to help
                 food insecure community members in Western North Carolina.`}
         image={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621607908/tone-row-2021/tractor.jpg`}
         url="/partnerships/tractor-food-and-farms"
@@ -38,23 +38,23 @@ export default function Tractor(props: Contract) {
           <Page gap={6}>
             <Box as="header" gap={3}>
               <Medium>Partnerships</Medium>
-              <Extralarge as="h1">Tractor Food &amp; Farms</Extralarge>
+              <Extralarge as="h1">TRACTOR Food &amp; Farms</Extralarge>
             </Box>
             <Section>
               <Medium>
                 <a href="http://tractorfoodandfarms.com/" target="_blank">
-                  Tractor Food &amp; Farms
+                  TRACTOR Food &amp; Farms
                 </a>{" "}
                 operates food relief programs to help food insecure community
                 members in Western North Carolina.
               </Medium>
               <Medium>
-                Together, Tone Row and Tractor designed & built an application
+                Together, Tone Row and TRACTOR designed & built an application
                 to help with their distribution of locally-grown food to food
                 pantries in the area.
               </Medium>
               <Medium>
-                Using the app, Tractor publishes their weekly inventory to
+                Using the app, TRACTOR publishes their weekly inventory to
                 participating food pantries. Food pantries respond with the
                 current needs/preferences of the community members they serve.
               </Medium>
@@ -79,14 +79,14 @@ export default function Tractor(props: Contract) {
         <LeftAlignedContainer>
           <Page gap={3}>
             <img
+              width={1000}
+              height={604}
+              src={`https://res.cloudinary.com/tone-row/image/upload/w_600/v1621618114/tone-row-2021/cge2qw0seagvp3blyocu.png`}
+            />
+            <img
               src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621607908/tone-row-2021/tractor.jpg"
               width={3840}
               height={2160}
-            />
-            <img
-              width={1200}
-              height={765}
-              src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621618114/tone-row-2021/jft6fj2erwjzemikakbs.png`}
             />
             <img
               src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621544380/tone-row-2021/diqx2a2vdek4siba9mvr.jpg"

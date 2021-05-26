@@ -60,7 +60,7 @@ export default function Index({ posts }: Contract) {
             <ul>
               <li>
                 <Link href="/partnerships/tractor-food-and-farms" passHref>
-                  <Large as="a">Tractor Food &amp; Farms</Large>
+                  <Large as="a">TRACTOR Food &amp; Farms</Large>
                 </Link>
               </li>
             </ul>
