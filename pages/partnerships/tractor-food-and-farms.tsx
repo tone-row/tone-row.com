@@ -1,6 +1,7 @@
 import { GetStaticProps } from "next";
 import React from "react";
 import styled from "styled-components";
+import ImageWithCaption from "../../components/ImageWithCaption";
 import Meta from "../../components/Meta";
 import PostList from "../../components/PostList";
 import { Container, Page, Section } from "../../components/structure";
@@ -81,18 +82,22 @@ export default function Tractor(props: Contract) {
             <img
               width={1000}
               height={604}
-              src={`https://res.cloudinary.com/tone-row/image/upload/w_600/v1621618114/tone-row-2021/cge2qw0seagvp3blyocu.png`}
+              src={`https://res.cloudinary.com/tone-row/image/upload/w_1200/v1621618114/tone-row-2021/cge2qw0seagvp3blyocu.png`}
             />
-            <img
-              src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621607908/tone-row-2021/tractor.jpg"
-              width={3840}
-              height={2160}
-            />
-            <img
-              src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621544380/tone-row-2021/diqx2a2vdek4siba9mvr.jpg"
-              width={3840}
-              height={2160}
-            />
+            <ImageWithCaption caption="Photo by Dru Zucchino">
+              <img
+                src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621607908/tone-row-2021/tractor.jpg"
+                width={3840}
+                height={2160}
+              />
+            </ImageWithCaption>
+            <ImageWithCaption caption="Photo by Dru Zucchino">
+              <img
+                src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621544380/tone-row-2021/diqx2a2vdek4siba9mvr.jpg"
+                width={3840}
+                height={2160}
+              />
+            </ImageWithCaption>
           </Page>
         </LeftAlignedContainer>
       </Box>
