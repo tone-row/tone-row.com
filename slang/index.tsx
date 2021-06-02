@@ -13,8 +13,11 @@ type Colors =
   | "color-foreground"
   | "color-background"
   | "color-accent"
+  | "color-secondary"
   | "palette-black-0"
   | "palette-white-0"
+  | "palette-white-1"
+  | "palette-white-2"
   | "palette-blue-0";
 export type BoxProps = PropsWithAs<BaseBoxProps<Breakpoints, Colors>>;
 export type TypeProps = PropsWithAs<BaseTypeProps<Breakpoints, Colors>>;

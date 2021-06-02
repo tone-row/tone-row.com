@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
 import React from "react";
+import ImageWithCaption from "../../components/ImageWithCaption";
 import { MDX } from "../../components/MDX";
 import Meta from "../../components/Meta";
 import { Container, Page, Section } from "../../components/structure";
@@ -26,11 +27,21 @@ export default function Slug({ post, source = "" }: Contract) {
       />
       <Page pb={10} className={styles.Page} pt={3} at={{ tablet: { pt: 0 } }}>
         <Container as="header">
-          <img
-            src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
-            width={1000}
-            height={500}
-          />
+          {post.preview_credit ? (
+            <ImageWithCaption caption={post.preview_credit}>
+              <img
+                src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
+                width={1000}
+                height={500}
+              />
+            </ImageWithCaption>
+          ) : (
+            <img
+              src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
+              width={1000}
+              height={500}
+            />
+          )}
         </Container>
         <Container>
           <Box gap={3} as="header">

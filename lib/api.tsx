@@ -10,6 +10,7 @@ export interface Post {
   slug: string;
   preview: string;
   description: string;
+  preview_credit?: string;
   partnership?: string;
   status: "published" | "draft";
 }

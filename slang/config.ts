@@ -2,7 +2,7 @@ import { SlangConfig } from "@tone-row/slang";
 
 const palette = {
   black: ["#000000"],
-  white: ["#ffffff"],
+  white: ["#ffffff", "#888", "#444444"],
   blue: ["#3d1be2"],
 };
 
@@ -10,12 +10,14 @@ export const colors = {
   foreground: palette.black[0],
   background: palette.white[0],
   accent: palette.blue[0],
+  secondary: palette.white[1],
 };
 
 export const darkmode: typeof colors = {
   foreground: palette.white[0],
   background: palette.black[0],
   accent: palette.blue[0],
+  secondary: palette.white[2],
 };
 
 const config: Partial<SlangConfig> = {
