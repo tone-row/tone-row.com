@@ -16,7 +16,7 @@
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^4.0.0",
     "modern-css-reset": "^1.4.0",
-    "next": "latest",
+    "next": "10.2.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "styled-components": "^5.3.0",
