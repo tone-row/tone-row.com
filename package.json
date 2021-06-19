@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@tone-row/slang": "^1.2.37",
-    "date-fns": "^2.21.3",
+    "date-fns": "^2.22.1",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",
     "mdx-bundler": "^4.0.0",
