@@ -30,7 +30,9 @@ export default function Index({ posts }: Contract) {
           }}
         >
           <Section at={{ desktop: { area: "span 2 / auto" } }}>
-            <Large as="h2">Projects</Large>
+            <Large as="h2" weight={700}>
+              Projects
+            </Large>
             <Large>
               We like to develop open-source tools to improve productivity and
               developer-experiences.
@@ -52,7 +54,9 @@ export default function Index({ posts }: Contract) {
             </ul>
           </Section>
           <Section>
-            <Large as="h2">Partnerships</Large>
+            <Large as="h2" weight={700}>
+              Partnerships
+            </Large>
             <Large>
               We build apps to accelerate nonprofits and community-centered
               organizations.
@@ -66,11 +70,15 @@ export default function Index({ posts }: Contract) {
             </ul>
           </Section>
           <Section>
-            <Large as="h2">Blog</Large>
+            <Large as="h2" weight={700}>
+              Blog
+            </Large>
             <PostList posts={posts} />
           </Section>
           <Section at={{ desktop: { area: "1 / 3 / span 2 / auto" } }}>
-            <Large as="h2">Connect</Large>
+            <Large as="h2" weight={700}>
+              Connect
+            </Large>
             <Box as="ul" gap={1}>
               <li>
                 <Large as="a" href="https://github.com/tone-row">

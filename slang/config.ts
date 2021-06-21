@@ -22,16 +22,17 @@ export const darkmode: typeof colors = {
 
 const config: Partial<SlangConfig> = {
   baseFontFamily: "nm",
-  baseFontSizePx: 20,
-  baseFontLineHeight: 1.33,
+  baseFontSizePx: 19,
+  baseFontLineHeight: 1.5,
   baseFontLineHeightMobile: 1.45,
+  typeScaleBase: 1.16,
   typeScaleBaseMobile: 1.15,
   inverseTypeScaleLineHeightMobile: 0.95,
-  inverseTypeScaleLineHeight: 0.98,
+  inverseTypeScaleLineHeight: 0.96,
   errorCorrectionTopPx: -2,
   errorCorrectionBottomPx: -2,
   errorCorrectionTopScale: 1.2,
-  spacerPx: 5,
+  spacerPx: 6,
   palette,
   colors,
 };
