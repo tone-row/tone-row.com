@@ -496,14 +496,14 @@ body {
 
 :where(:root) {
 	--base-font-family:nm;
-	--base-font-size-px:20px;
-	--base-font-size:20;
+	--base-font-size-px:19px;
+	--base-font-size:19;
 	--base-font-size-mobile-px:16px;
 	--base-font-size-mobile:16;
-	--base-font-line-height:1.33;
+	--base-font-line-height:1.5;
 	--base-font-line-height-mobile:1.45;
-	--spacer-px:5px;
-	--spacer:5;
+	--spacer-px:6px;
+	--spacer:6;
 	--base-spacing-px:16px;
 	--base-spacing:16;
 	--base-container-size-px:600px;
@@ -517,7 +517,7 @@ body {
 	--error-correction-bottom-scale:1;
 	--type-scale-base:1.16;
 	--type-scale-base-mobile:1.15;
-	--inverse-type-scale-line-height:0.98;
+	--inverse-type-scale-line-height:0.96;
 	--inverse-type-scale-line-height-mobile:0.95;
 	--mapping-to-user-agent-headers:4;
 	--smallest-border-radius-px:3px;
@@ -550,18 +550,18 @@ body {
 	--mobile-multiplier-6:2.313060765624999;
 	--mobile-multiplier-7:2.6600198804687487;
 	--mobile-multiplier-8:3.0590228625390603;
-	--lh-multiplier--3:1.062482469039261;
-	--lh-multiplier--2:1.0412328196584757;
-	--lh-multiplier--1:1.0204081632653061;
+	--lh-multiplier--3:1.1302806712962965;
+	--lh-multiplier--2:1.0850694444444444;
+	--lh-multiplier--1:1.0416666666666667;
 	--lh-multiplier-0:1;
-	--lh-multiplier-1:0.98;
-	--lh-multiplier-2:0.9603999999999999;
-	--lh-multiplier-3:0.9411919999999999;
-	--lh-multiplier-4:0.92236816;
-	--lh-multiplier-5:0.9039207967999999;
-	--lh-multiplier-6:0.8858423808639999;
-	--lh-multiplier-7:0.8681255332467199;
-	--lh-multiplier-8:0.8507630225817855;
+	--lh-multiplier-1:0.96;
+	--lh-multiplier-2:0.9216;
+	--lh-multiplier-3:0.8847359999999999;
+	--lh-multiplier-4:0.8493465599999999;
+	--lh-multiplier-5:0.8153726975999999;
+	--lh-multiplier-6:0.7827577896959999;
+	--lh-multiplier-7:0.7514474781081598;
+	--lh-multiplier-8:0.7213895789838334;
 	--lh-mobile-multiplier--3:1.1663507799970843;
 	--lh-mobile-multiplier--2:1.10803324099723;
 	--lh-mobile-multiplier--1:1.0526315789473684;

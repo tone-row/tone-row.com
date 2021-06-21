@@ -61,6 +61,14 @@ ul {
   transform-origin: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
+}
+
 /* Theme & Theme buttons */
 
 @media (prefers-color-scheme: light) {

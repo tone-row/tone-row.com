@@ -42,27 +42,28 @@ export default function Tractor(props: Contract) {
               <Extralarge as="h1">TRACTOR Food &amp; Farms</Extralarge>
             </Box>
             <Section>
-              <Medium>
+              <Large>
                 <a href="http://tractorfoodandfarms.com/" target="_blank">
                   TRACTOR Food &amp; Farms
                 </a>{" "}
                 operates food relief programs to help food insecure community
                 members in Western North Carolina.
-              </Medium>
+              </Large>
               <Medium>
-                Together, Tone Row and TRACTOR designed & built an application
-                to help with their distribution of locally-grown food to food
-                pantries in the area.
+                Together, Tone Row and TRACTOR designed &amp; built an
+                application to augment TRACTOR's distribution of locally-grown
+                food to food pantries in the area.
               </Medium>
               <Medium>
                 Using the app, TRACTOR publishes their weekly inventory to
-                participating food pantries. Food pantries respond with the
-                current needs/preferences of the community members they serve.
+                participating food pantries. Then food pantries can respond with
+                the current needs and preferences of the community members they
+                serve. With that information, the app then becomes a tool to
+                help TRACTOR create an optimal food packing strategy.
               </Medium>
               <Medium>
-                Finally, the app translates that information into an optimal
-                food packing strategy, getting the right food to the right
-                places to minimize food waste and maximize pantry efficacy.
+                The goal is to get the right food to the right places to
+                minimize food waste and maximize pantry efficacy.
               </Medium>
               <Medium>
                 This app is headed into production Summer 2021. Check back for

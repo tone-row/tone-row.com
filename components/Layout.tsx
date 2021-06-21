@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     >
       <Box
         as="nav"
-        template="auto auto / auto auto"
+        template="repeat(auto-fit, auto) / auto auto"
         gap={6}
         at={{ tablet: { template: "none / 1fr auto" } }}
         content="start normal"
@@ -76,6 +76,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <Box
           flow="column"
           items="center normal"
+          self="start end"
           area="1 / 2"
           gap={1}
           at={{ tablet: { area: "auto / auto" } }}
