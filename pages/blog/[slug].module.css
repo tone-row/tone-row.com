@@ -5,6 +5,6 @@
   margin-right: auto;
   width: 100%;
   border: none;
-  border-top: solid 2px var(--color-foreground);
-  opacity: 0.1;
+  border-top: solid 1px var(--color-foreground);
+  opacity: 0.3;
 }
