@@ -14,7 +14,7 @@
     "date-fns": "^2.21.3",
     "framer-motion": "^4.1.17",
     "gray-matter": "^4.0.3",
-    "mdx-bundler": "^4.0.0",
+    "mdx-bundler": "^4.0.1",
     "modern-css-reset": "^1.4.0",
     "next": "latest",
     "react": "^17.0.1",
