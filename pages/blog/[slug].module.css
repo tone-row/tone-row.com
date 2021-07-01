@@ -8,3 +8,26 @@
   border-top: solid 1px var(--color-foreground);
   opacity: 0.3;
 }
+
+.Mdx blockquote {
+  opacity: 0.5;
+  font-size: 2em;
+}
+
+.Mdx blockquote a {
+  text-decoration: none;
+}
+
+.Mdx img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.Page img {
+  max-width: 100%;
+  height: auto;
+}
+
+.Mdx ul {
+  list-style: disc;
+}

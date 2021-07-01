@@ -108,6 +108,7 @@ html[data-mode="light"] .btnDarkMode {
 html[data-mode="dark"] {
   --color-background: #000000;
   --color-foreground: #ffffff;
+  --color-accent: #32ffd3;
 }
 
 /* Selection Color */
@@ -132,4 +133,22 @@ html[data-mode="dark"] {
 
 :focus-visible {
   outline: 2px dashed var(--color-foreground);
+}
+
+.code-wrapper {
+  width: 100%;
+  overflow: auto;
+  border-radius: 4px;
+  background-color: #011627;
+}
+
+code {
+  font-size: 0.85em !important;
+  opacity: 0.75;
+  color: var(--color-accent);
+}
+
+pre code {
+  font-size: 1em !important;
+  opacity: 1;
 }

@@ -500,7 +500,7 @@ body {
 	--base-font-size:19;
 	--base-font-size-mobile-px:16px;
 	--base-font-size-mobile:16;
-	--base-font-line-height:1.5;
+	--base-font-line-height:1.55;
 	--base-font-line-height-mobile:1.45;
 	--spacer-px:6px;
 	--spacer:6;
@@ -603,6 +603,7 @@ body {
 	--palette-white-1:#888;
 	--palette-white-2:#444444;
 	--palette-blue-0:#3d1be2;
+	--palette-blue-1:#684de9;
 	--color-foreground:#000000;
 	--color-background:#ffffff;
 	--color-accent:#3d1be2;

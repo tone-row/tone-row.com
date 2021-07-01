@@ -49,7 +49,7 @@ export default function Slug({ post, source = "" }: Contract) {
             <Extralarge as="h1">{post.title}</Extralarge>
           </Box>
         </Container>
-        <Section>
+        <Section className={styles.Mdx}>
           <MDX source={source} />
         </Section>
       </Page>
@@ -70,9 +70,6 @@ export const getStaticProps: GetStaticProps<Contract, { slug: string }> =
     }
 
     const post = await getPostBySlug(slug);
-    // const components = await getComponents();
-    const source = await prepareMDX(post.content, {
-      Image: `export {default as Image} from 'next/image';`,
-    });
+    const source = await prepareMDX(post.content);
     return { props: { post, source } };
   };

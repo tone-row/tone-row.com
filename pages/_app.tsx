@@ -4,6 +4,8 @@ import "../slang/slang.css";
 import { AppProps } from "next/app";
 import Layout from "../components/Layout";
 import Head from "next/head";
+// Code Highlight
+import "highlight.js/styles/night-owl.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

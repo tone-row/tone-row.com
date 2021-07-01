@@ -1,0 +1,219 @@
+---
+title: End to End CI Tests in Minutes with Netlify, Playwright & Github Actions
+published: 2021-07-01
+preview: rez0met5umoeuqci39ba.png
+description: E2E continuous integration testing might be closer than you think! 😃
+status: published
+---
+
+Writing tests is a bit like paying taxes, in the sense that you give a bit extra (in development hours)— but, if you're lucky, in return you get a healthier, more-predictable environment for you and your code. That's a terrible analogy. Excuse me.
+
+Back in 2018 at Assert Conference Kent Dodds presented his testing trophy (which itself followed from Guillermo Rauch's tweet) which emphasized the importance of integration tests.
+
+![Kent C Dodds Testing Trophy](https://testingjavascript.com/static/trophyWithLabels@2x-4d0c19a94d88ac607cc5cbeaa8f8708d.png)
+
+At one point Kent explains the benefit of integration tests over end-to-end tests and makes a nice foreshadowing aside:
+
+> ["It's so much faster to run a node process than to pull up a full browser and run that... hopefully that will get faster with our tools"](https://www.youtube.com/watch?v=Fha2bVoC8SE&t=796s)
+
+In the era of the jamstack and ubiquitous deploy previews... we may be one step closer to end-to-end tests being "cheaper" than integration tests. That's the hypothesis of this article. To that end, **what's the minimal setup we need for end-to-end tests?**
+
+Let's assume we're working on a website or app hosted on netlify with deploy previews on pull-requests. [Here's my app](https://github.com/tone-row/easy-e2e). It stores some user-entered text in local storage. It was forged in the flames of create-react-app.
+
+![Demo App - user enters text and it's displayed](https://res.cloudinary.com/tone-row/image/upload/c_crop,g_west,w_472/v1625166486/tone-row-2021/demo-app-gif.gif)
+
+When I make PR's I end up with a fancy netlify preview like so:
+
+![Example netlify deploy preview](https://res.cloudinary.com/tone-row/image/upload/v1625167916/tone-row-2021/netlify%20deploy%20preview.png)
+
+**Our goal:** grab the netlify preview url, run some end-to-end tests with playwright, sleep better at night!
+
+## Step 1
+
+```shell
+yarn add -D @playwright/test
+```
+
+Both locally and in our continuous integration we're going to use a globally installed version of `playwright`– so the only package we need to add to our repo is the test runner.
+
+Using playwright with other test runners (the obvious choice being jest because it's shipped with create-react-app) is definitely possible; however, IMO we don't benefit much because it requires a bit more setup; plus the concept of "coverage" in end-to-end testing is a pretty hard thing to pin down.
+
+## Step 2
+
+Add the following script to `package.json`
+
+```json
+"e2e": "npx playwright test --browser=all e2e"
+```
+
+This is going to run any tests in our `e2e` folder in chromium (Chrome), firefox, and webkit (Safari). Let's prepare that folder.
+
+## Step 3
+
+```bash
+mkdir e2e && touch e2e/app.spec.ts
+```
+
+We make an `e2e` folder in the root of project, and add one test file named `app.spec.ts`
+
+## Step 4
+
+Let's write our first test. We're going to test that our page has the correct title.
+
+```tsx
+// app.spec.ts
+import { test as base, expect } from "@playwright/test";
+
+type Fixtures = { url: string };
+
+const test = base.extend<Fixtures>({
+  url: process.env.E2E_START_URL ?? "http://localhost:3000",
+});
+
+const { describe, beforeEach } = test;
+
+describe("App", () => {
+  beforeEach(async ({ page, url }) => {
+    await page.goto(url as string);
+  });
+
+  test("Correct Page Title", async ({ page }) => {
+    const title = await page.title();
+
+    // Replace this with your app's page title
+    //                 ⤵
+    expect(title).toBe("Save Some Text");
+  });
+});
+```
+
+The test itself is pretty straightforward. The more interesting piece of the puzzle is what playwright calls fixtures. Fixtures is a fancy word for _things you want to be passed to each of your test runs_. In our case, we need to grab our netlify deploy preview url, and pass that to each of test runs. This code...
+
+```ts
+import { test as base, expect } from "@playwright/test";
+
+type Fixtures = { url: string };
+
+const test = base.extend<Fixtures>({
+  url: process.env.E2E_START_URL ?? "http://localhost:3000",
+});
+
+const { describe, beforeEach } = test;
+```
+
+...is saying
+
+- I'd like to expose a fixture (variable) called `url` to each of my tests
+- If there's an environment variable on the node process called `E2E_START_URL` - use that value. Otherwise use localhost:3000 (create react app's default).
+- Finally, give me back the `describe` and `beforeEach` utils we need to write our tests
+
+## Step 5
+
+Test locally! In one shell, start your app (`yarn start` for CRA). In another shell, try `yarn e2e`. You may need to install some playwright dependencies the first time you run it, but you should see 3 tests run and pass.
+
+For a little added spice, try `yarn e2e --headed`. This will actually open the browser windows and give you some good insight into what the test runner is doing behind the scenes.
+
+Sweet! On to the continuous integration part of the equation...
+
+## Step 6
+
+If you don't already have any github actions running, create the directory `.github/workflows` in the root of your repo. Then add the following code a file called `e2e.yml`
+
+```yaml
+# .github/workflows/e2e.yml
+name: E2E Tests
+
+on: [pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Setup Playwright
+        run: npx playwright install-deps
+      - name: Install
+        run: yarn install
+      - name: Waiting for 200 from the Netlify Preview
+        uses: jakepartusch/wait-for-netlify-action@v1.2
+        id: waitFor200
+        with:
+          site_name: "reverent-joliot-43ca55" # <-- replace with your site url
+      - name: Run E2E Tests on Netlify URL
+        run: E2E_START_URL="${{ steps.waitFor200.outputs.url }}" yarn e2e
+```
+
+If you haven't seen a github action before, this yaml file is saying, "On pull requests, run each of these steps in order". You can learn more about writing github actions [here](https://docs.github.com/en/actions).
+
+Individual steps can actually reference other github actions. The magic ingredient of our e2e tests is an action created by [Jake Partusch](https://twitter.com/JakePartusch), which waits for and returns the netlify deploy preview url. Afterwards we store the url on an environment variable and run our end-to-end script.
+
+Don't forget to change the `site_name` to your netlify site's ID. You can
+find that by logging into netlify and looking at your project.
+
+## Bada Bing Bada Boom
+
+That's it! You should now be able to open up a pull requests on your app, and GitHub will run end-to-end tests on the netlify deploy preview url.
+
+---
+
+## Writing Better Tests
+
+Obviously testing the page's title isn't going to give you much confidence in your app. Here are a few more tests I added to the demo app, to give you an idea of what playwright tests look like.
+
+```ts
+import { test as base, expect } from "@playwright/test";
+
+type Fixtures = { url: string };
+
+const test = base.extend<Fixtures>({
+  url: process.env.E2E_START_URL ?? "http://localhost:3000",
+});
+
+const { describe, beforeEach } = test;
+
+describe("App", () => {
+  beforeEach(async ({ page, url }) => {
+    await page.goto(url as string);
+  });
+
+  test("Correct Page Title", async ({ page }) => {
+    const title = await page.title();
+    expect(title).toBe("Save Some Text");
+  });
+
+  test("Displays user input", async ({ page }) => {
+    await page.click("input");
+    // Fill input
+    await page.fill("input", "This is working");
+
+    const display = await page.innerText("span.display");
+
+    expect(display).toEqual("This is working");
+  });
+
+  test("Retains text on refresh", async ({ page }) => {
+    await page.click("input");
+    // Fill input
+    await page.fill("input", "This is working");
+
+    let display = await page.innerText("span.display");
+
+    expect(display).toEqual("This is working");
+
+    await page.reload();
+
+    display = await page.innerText("span.display");
+
+    expect(display).toEqual("This is working");
+  });
+});
+```
+
+One of the amazing features of playwright is the ability to generate code for your tests via the [codegen CLI command](https://playwright.dev/docs/cli#generate-code). You'll definitely want to have a look at that.
+
+This tutorial was meant to be as bare-bones as possible, but if you think I left something important out please let me know on twitter ([@rob\_\_\_\_\_\_gordon](https://twitter.com/rob______gordon)) or for typos make a PR on this article here.
+
+Thanks for reading!

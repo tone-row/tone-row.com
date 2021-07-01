@@ -3,7 +3,7 @@ import { SlangConfig } from "@tone-row/slang";
 const palette = {
   black: ["#000000"],
   white: ["#ffffff", "#888", "#444444"],
-  blue: ["#3d1be2"],
+  blue: ["#3d1be2", "#684de9"],
 };
 
 export const colors = {
@@ -16,14 +16,14 @@ export const colors = {
 export const darkmode: typeof colors = {
   foreground: palette.white[0],
   background: palette.black[0],
-  accent: palette.blue[0],
+  accent: palette.blue[1],
   secondary: palette.white[2],
 };
 
 const config: Partial<SlangConfig> = {
   baseFontFamily: "nm",
   baseFontSizePx: 19,
-  baseFontLineHeight: 1.5,
+  baseFontLineHeight: 1.55,
   baseFontLineHeightMobile: 1.45,
   typeScaleBase: 1.16,
   typeScaleBaseMobile: 1.15,

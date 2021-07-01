@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { bundleMDX } from "mdx-bundler";
+import highlight from "remark-highlight.js";
 
 export interface Post {
   title: string;
@@ -54,6 +55,10 @@ export const prepareMDX = async (
 ) => {
   const { code } = await bundleMDX(source, {
     files,
+    xdmOptions: (options) => {
+      options.remarkPlugins = [...(options.remarkPlugins ?? []), highlight];
+      return options;
+    },
   });
 
   return code;
