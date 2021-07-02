@@ -1,5 +1,5 @@
-import { format, parseISO } from "date-fns";
+import { format, parseISO, addHours } from "date-fns";
 
 export function formatDate(date: string) {
-  return format(parseISO(date), "MMM d, y");
+  return format(addHours(parseISO(date), 5), "MMM d, y");
 }
