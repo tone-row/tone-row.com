@@ -87,7 +87,7 @@ describe("App", () => {
 });
 ```
 
-The test itself is pretty straightforward. The more interesting piece of the puzzle is what playwright calls fixtures. Fixtures is a fancy word for _things you want to be passed to each of your test runs_. In our case, we need to grab our netlify deploy preview url, and pass that to each of test runs. This code...
+The test itself is pretty straightforward. The more interesting piece of the puzzle is what playwright calls fixtures. Fixtures is a fancy word for _things you want to be passed to each of your test runs_. In our case, we need to grab our netlify deploy preview url, and pass that to each test run. This code...
 
 ```ts
 import { test as base, expect } from "@playwright/test";
