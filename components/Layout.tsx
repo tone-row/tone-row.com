@@ -6,7 +6,7 @@ import Moon from "./moon.svg";
 import Sun from "./sun.svg";
 import Link from "next/link";
 import styled from "styled-components";
-import { Extralarge, Medium, Small } from "./typography";
+import { Extralarge, Medium } from "./typography";
 import styles from "./Layout.module.css";
 import createPersistedState from "use-persisted-state";
 
