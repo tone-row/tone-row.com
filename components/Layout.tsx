@@ -12,7 +12,7 @@ import createPersistedState from "use-persisted-state";
 
 const useTheme = createPersistedState("tone-row-appearance");
 
-const padding = 6;
+const padding = 4;
 
 const A = styled.a`
   font-size: 0;
@@ -52,8 +52,8 @@ export default function Layout({ children }: { children: ReactNode }) {
         {pathname === "/" ? (
           <Box area="2 / span 2" at={{ tablet: { area: "auto / auto" } }}>
             <Extralarge as="h1" className={styles.Title}>
-              Tone Row is a space for web-development research with a focus on
-              programming for social impact.
+              <em>Tone Row</em> is a space for web-development research with a
+              focus on programming for social&nbsp;impact.
             </Extralarge>
           </Box>
         ) : (

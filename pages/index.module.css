@@ -1,3 +1,42 @@
 .FF {
   fill: currentColor;
 }
+
+.home a {
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.home a:hover {
+  opacity: 0.33;
+}
+
+.gradient {
+  width: 70px;
+  height: 70px;
+  border-radius: 3px;
+
+  background-blend-mode: color;
+  background-color: #0000;
+  background-image: conic-gradient(
+      at 0 100%,
+      #ff005a80,
+      #ff005a80 30deg,
+      #82dca080 60deg,
+      #e6ff0080 90deg
+    ),
+    radial-gradient(circle at 25%, #ff640080, #ff640080 30%, #e6ff0080 60%),
+    repeating-linear-gradient(
+      279deg,
+      #e6ff0080,
+      #e6ff0080 30px,
+      #82dca080 90px,
+      #e6ff0080 120px
+    );
+  background-position: 0 0;
+  background-repeat: repeat, repeat, repeat;
+  background-size: 100% 100%;
+  background-attachment: scroll, scroll, scroll;
+  background-origin: padding-box, padding-box, padding-box;
+  background-clip: border-box, border-box, border-box;
+}

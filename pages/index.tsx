@@ -1,6 +1,6 @@
 import React from "react";
 import { Page, Section } from "../components/structure";
-import { Large } from "../components/typography";
+import { Large, Medium } from "../components/typography";
 import Link from "next/link";
 import { GetStaticProps } from "next";
 import { getPosts, Post } from "../lib/api";
@@ -20,7 +20,7 @@ export default function Index({ posts }: Contract) {
   return (
     <>
       <Meta />
-      <Page pt={10}>
+      <Page pt={10} className={styles.home}>
         <Box
           gap={gap}
           template="none / none"
@@ -31,12 +31,12 @@ export default function Index({ posts }: Contract) {
         >
           <Section at={{ desktop: { area: "span 2 / auto" } }}>
             <Large as="h2" weight={700}>
-              Projects
+              Tools for Creativity &amp; Productivity
             </Large>
-            <Large>
+            <Medium>
               We like to develop open-source tools to improve productivity and
               developer-experiences.
-            </Large>
+            </Medium>
             <ul>
               <li>
                 <Box
@@ -48,23 +48,36 @@ export default function Index({ posts }: Contract) {
                   gap={3}
                 >
                   <FlowchartFun height="70" width="70" className={styles.FF} />
-                  <Large>flowchart.fun</Large>
+                  <Medium>flowchart.fun</Medium>
+                </Box>
+              </li>
+              <li>
+                <Box
+                  as="a"
+                  href="https://art-of-the-gradient.tone-row.com/"
+                  flow="column"
+                  content="normal start"
+                  items="center normal"
+                  gap={3}
+                >
+                  <div className={styles.gradient} />
+                  <Medium>L&apos;art du dégradé</Medium>
                 </Box>
               </li>
             </ul>
           </Section>
           <Section>
             <Large as="h2" weight={700}>
-              Partnerships
+              Non Profit Partnerships
             </Large>
-            <Large>
+            <Medium>
               We build apps to accelerate nonprofits and community-centered
               organizations.
-            </Large>
+            </Medium>
             <ul>
               <li>
                 <Link href="/partnerships/tractor-food-and-farms" passHref>
-                  <Large as="a">TRACTOR Food &amp; Farms</Large>
+                  <Medium as="a">TRACTOR Food &amp; Farms</Medium>
                 </Link>
               </li>
             </ul>
@@ -81,31 +94,31 @@ export default function Index({ posts }: Contract) {
             </Large>
             <Box as="ul" gap={1}>
               <li>
-                <Large as="a" href="https://github.com/tone-row">
+                <Medium as="a" href="https://github.com/tone-row">
                   Github
-                </Large>
+                </Medium>
               </li>
               <li>
-                <Large as="a" href="https://twitter.com/tone_row_">
+                <Medium as="a" href="https://twitter.com/tone_row_">
                   Twitter
-                </Large>
+                </Medium>
               </li>
               <li>
-                <Large as="a" href="https://opencollective.com/tone-row">
+                <Medium as="a" href="https://opencollective.com/tone-row">
                   Open Collective
-                </Large>
+                </Medium>
               </li>
               <li>
-                <Large as="a" href="https://github.com/sponsors/tone-row">
+                <Medium as="a" href="https://github.com/sponsors/tone-row">
                   Github Sponsors
-                </Large>
+                </Medium>
               </li>
             </Box>
-            <Large>
+            <Medium>
               Say Hello!
               <br />
               bonjour@tone-row.com
-            </Large>
+            </Medium>
           </Section>
         </Box>
       </Page>

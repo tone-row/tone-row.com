@@ -14,7 +14,7 @@ export const Medium = forwardRef(function Medium(
   return <Type as={as} size={size} {...props} ref={ref} />;
 });
 export const Large = forwardRef(function Large(
-  { as = "span", size = 1, ...props }: TypeProps,
+  { as = "span", size = 2, ...props }: TypeProps,
   ref
 ) {
   return <Type as={as} size={size} {...props} ref={ref} />;
@@ -26,7 +26,7 @@ export const WideLarge = forwardRef(function WideLarge(
   return <Type as={as} size={size} {...props} ref={ref} />;
 });
 export const Extralarge = forwardRef(function Extralarge(
-  { as = "span", size = 6, ...props }: TypeProps,
+  { as = "span", size = 7, ...props }: TypeProps,
   ref
 ) {
   return <Type as={as} size={size} {...props} ref={ref} />;
