@@ -10,7 +10,12 @@ Writing tests is a bit like paying taxes, in the sense that you give a bit extra
 
 Back in 2018 at Assert Conference Kent Dodds presented his testing trophy (which itself followed from Guillermo Rauch's tweet) which emphasized the importance of integration tests.
 
-![Kent C Dodds Testing Trophy](https://testingjavascript.com/static/trophyWithLabels@2x-4d0c19a94d88ac607cc5cbeaa8f8708d.png)
+<img
+  src="https://testingjavascript.com/static/trophyWithLabels@2x-4d0c19a94d88ac607cc5cbeaa8f8708d.png"
+  alt="Kent Dodds Testing Trophy"
+  width="400"
+  height="400"
+/>
 
 At one point Kent explains the benefit of integration tests over end-to-end tests and makes a nice foreshadowing aside:
 
@@ -20,11 +25,21 @@ In the era of the jamstack and ubiquitous deploy previews... we may be one step 
 
 Let's assume we're working on a website or app hosted on netlify with deploy previews on pull-requests. [Here's my app](https://github.com/tone-row/easy-e2e). It stores some user-entered text in local storage. It was forged in the flames of create-react-app.
 
-![Demo App - user enters text and it's displayed](https://res.cloudinary.com/tone-row/image/upload/c_crop,g_west,w_472/v1625166486/tone-row-2021/demo-app-gif.gif)
+<img
+  src="https://res.cloudinary.com/tone-row/image/upload/c_crop,g_west,w_472/v1625166486/tone-row-2021/demo-app-gif.gif"
+  alt="Demo App - user enters text and it's displayed"
+  width="400"
+  height="400"
+/>
 
 When I make PR's I end up with a fancy netlify preview like so:
 
-![Example netlify deploy preview](https://res.cloudinary.com/tone-row/image/upload/v1625167916/tone-row-2021/netlify%20deploy%20preview.png)
+<img
+  src="https://res.cloudinary.com/tone-row/image/upload/v1625167916/tone-row-2021/netlify%20deploy%20preview.png"
+  alt="Example netlify deploy preview"
+  width="400"
+  height="400"
+/>
 
 **Our goal:** grab the netlify preview url, run some end-to-end tests with playwright, sleep better at night!
 

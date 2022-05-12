@@ -8,6 +8,7 @@ import { Container, Page, Section } from "../../components/structure";
 import { Extralarge, Large, Medium } from "../../components/typography";
 import { getPosts, Post } from "../../lib/api";
 import { Box } from "../../slang";
+import Image from "next/image";
 
 type Contract = {
   posts: Post[];
@@ -43,7 +44,11 @@ export default function Tractor(props: Contract) {
             </Box>
             <Section>
               <Large>
-                <a href="http://tractorfoodandfarms.com/" target="_blank">
+                <a
+                  href="http://tractorfoodandfarms.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   TRACTOR Food &amp; Farms
                 </a>{" "}
                 operates food relief programs to help food insecure community
@@ -51,8 +56,8 @@ export default function Tractor(props: Contract) {
               </Large>
               <Medium>
                 Together, Tone Row and TRACTOR designed &amp; built an
-                application to augment TRACTOR's distribution of locally-grown
-                food to food pantries in the area.
+                application to augment TRACTOR&apos;s distribution of
+                locally-grown food to food pantries in the area.
               </Medium>
               <Medium>
                 Using the app, TRACTOR publishes their weekly inventory to
@@ -67,7 +72,7 @@ export default function Tractor(props: Contract) {
               </Medium>
               <Medium>
                 This app is headed into production Summer 2021. Check back for
-                more updates on how it's progressing.
+                more updates on how it&apos;s progressing.
               </Medium>
             </Section>
             {posts.length ? (
@@ -80,23 +85,26 @@ export default function Tractor(props: Contract) {
         </LeftAlignedContainer>
         <LeftAlignedContainer>
           <Page gap={3}>
-            <img
+            <Image
               width={1000}
               height={604}
               src={`https://res.cloudinary.com/tone-row/image/upload/w_1200/v1621618114/tone-row-2021/cge2qw0seagvp3blyocu.png`}
+              alt="Healthy Harvest"
             />
             <ImageWithCaption caption="Photo by Dru Zucchino">
-              <img
+              <Image
                 src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621607908/tone-row-2021/tractor.jpg"
                 width={3840}
                 height={2160}
+                alt="Tractor"
               />
             </ImageWithCaption>
             <ImageWithCaption caption="Photo by Dru Zucchino">
-              <img
+              <Image
                 src="https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_600/v1621544380/tone-row-2021/diqx2a2vdek4siba9mvr.jpg"
                 width={3840}
                 height={2160}
+                alt="Fresh Produce"
               />
             </ImageWithCaption>
           </Page>

@@ -9,6 +9,7 @@ import { getPostBySlug, getPostPaths, Post, prepareMDX } from "../../lib/api";
 import { formatDate } from "../../lib/helpers";
 import { Box } from "../../slang";
 import styles from "./[slug].module.css";
+import Image from "next/image";
 
 type Contract = {
   post?: Post;
@@ -29,17 +30,19 @@ export default function Slug({ post, source = "" }: Contract) {
         <Container>
           {post.preview_credit ? (
             <ImageWithCaption caption={post.preview_credit}>
-              <img
+              <Image
                 src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
                 width={1000}
                 height={500}
+                alt={post.title}
               />
             </ImageWithCaption>
           ) : (
-            <img
+            <Image
               src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
               width={1000}
               height={500}
+              alt={post.title}
             />
           )}
         </Container>
@@ -62,14 +65,16 @@ export async function getStaticPaths() {
   return { paths, fallback: false };
 }
 
-export const getStaticProps: GetStaticProps<Contract, { slug: string }> =
-  async ({ params }) => {
-    const slug = params?.slug;
-    if (!slug) {
-      return { redirect: { destination: "/404" }, props: {} };
-    }
+export const getStaticProps: GetStaticProps<
+  Contract,
+  { slug: string }
+> = async ({ params }) => {
+  const slug = params?.slug;
+  if (!slug) {
+    return { redirect: { destination: "/404" }, props: {} };
+  }
 
-    const post = await getPostBySlug(slug);
-    const source = await prepareMDX(post.content);
-    return { props: { post, source } };
-  };
+  const post = await getPostBySlug(slug);
+  const source = await prepareMDX(post.content);
+  return { props: { post, source } };
+};
