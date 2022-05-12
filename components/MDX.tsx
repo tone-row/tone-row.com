@@ -3,6 +3,7 @@ import { getMDXComponent } from "mdx-bundler/client";
 import { Large, Medium } from "./typography";
 import { Container } from "./structure";
 import { Box, Type } from "../slang";
+import NextImage from "next/image";
 
 const Paragraph = (props: any) => (
   <Container>
@@ -30,7 +31,7 @@ const H4 = (props: any) => (
 
 const Image = (props: any) => (
   <Container>
-    <img {...props} />
+    <NextImage {...props} />
   </Container>
 );
 

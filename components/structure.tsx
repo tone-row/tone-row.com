@@ -39,30 +39,34 @@ export const Container = ({
   />
 );
 
-Container.Medium = ({
+Container.Medium = function ContainerMedium({
   gap = 5,
   as = "div",
   className = "",
   ...props
-}: BoxProps) => (
-  <Box
-    as={as}
-    gap={gap}
-    className={[className, styles.ContainerMedium].join(" ")}
-    {...props}
-  />
-);
+}: BoxProps) {
+  return (
+    <Box
+      as={as}
+      gap={gap}
+      className={[className, styles.ContainerMedium].join(" ")}
+      {...props}
+    />
+  );
+};
 
-Container.Large = ({
+Container.Large = function ContainerLarge({
   gap = 5,
   as = "div",
   className = "",
   ...props
-}: BoxProps) => (
-  <Box
-    as={as}
-    gap={gap}
-    className={[className, styles.ContainerLarge].join(" ")}
-    {...props}
-  />
-);
+}: BoxProps) {
+  return (
+    <Box
+      as={as}
+      gap={gap}
+      className={[className, styles.ContainerLarge].join(" ")}
+      {...props}
+    />
+  );
+};
