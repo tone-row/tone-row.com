@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { GetStaticProps } from "next";
 import React from "react";
-import ImageWithCaption from "../../components/ImageWithCaption";
+
 import { MDX } from "../../components/MDX";
 import Meta from "../../components/Meta";
 import { Container, Page, Section } from "../../components/structure";
@@ -10,7 +10,6 @@ import { getPostBySlug, getPostPaths, Post, prepareMDX } from "../../lib/api";
 import { formatDate } from "../../lib/helpers";
 import { Box } from "../../slang";
 import styles from "./[slug].module.css";
-import Image from "next/image";
 
 type Contract = {
   post?: Post;

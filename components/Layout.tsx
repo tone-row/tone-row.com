@@ -18,11 +18,6 @@ const A = styled.a`
   font-size: 0;
 `;
 
-const Hand = styled.span`
-  font-size: 24px;
-  margin-top: -3px;
-`;
-
 export default function Layout({ children }: { children: ReactNode }) {
   const { pathname } = useRouter();
   const [appearance, setAppearance] = useTheme<"light" | "dark" | undefined>();
