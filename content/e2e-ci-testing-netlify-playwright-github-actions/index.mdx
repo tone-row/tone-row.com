@@ -1,35 +1,37 @@
 ---
-title: End to End CI Tests in Minutes with Netlify, Playwright & Github Actions
+title: E2E Testing in Minutes with Playwright and Github Actions
 published: 2021-07-01
 preview: rez0met5umoeuqci39ba.png
+preview_width: 2100
+preview_height: 1500
 description: E2E continuous integration testing might be closer than you think! 😃
 status: published
 ---
 
-Writing tests is a bit like paying taxes, in the sense that you give a bit extra (in development hours)— but, if you're lucky, in return you get a healthier, more-predictable environment for you and your code. That's a terrible analogy. Excuse me.
+The year was 2018. Assert Conference was held in the La Orilla Del Rio Ballroom in San Antonio, Texas. During one of the presentations, Ex-Paypal-Employee-Turned-Remix-Evangelist Kent C. Dodds presents a "Testing Trophy"; a spin off from a tweet by Guillermo Rauch.
 
-Back in 2018 at Assert Conference Kent Dodds presented his testing trophy (which itself followed from Guillermo Rauch's tweet) which emphasized the importance of integration tests.
+The gist was simple: integration tests.
 
 <img
-  src="https://testingjavascript.com/static/trophyWithLabels@2x-4d0c19a94d88ac607cc5cbeaa8f8708d.png"
+  src="https://res.cloudinary.com/tone-row/image/upload/v1625165663/tone-row-2021/kcd-testing-trophy.png"
   alt="Kent Dodds Testing Trophy"
-  width="400"
-  height="400"
+  width="443"
+  height="291"
 />
-
-At one point Kent explains the benefit of integration tests over end-to-end tests and makes a nice foreshadowing aside:
 
 > ["It's so much faster to run a node process than to pull up a full browser and run that... hopefully that will get faster with our tools"](https://www.youtube.com/watch?v=Fha2bVoC8SE&t=796s)
 
-In the era of the jamstack and ubiquitous deploy previews... we may be one step closer to end-to-end tests being "cheaper" than integration tests. That's the hypothesis of this article. To that end, **what's the minimal setup we need for end-to-end tests?**
+_Hopefully..._
 
-Let's assume we're working on a website or app hosted on netlify with deploy previews on pull-requests. [Here's my app](https://github.com/tone-row/easy-e2e). It stores some user-entered text in local storage. It was forged in the flames of create-react-app.
+Fast forward to 2021. With deploy previews à la Netlify and Vercel, Github Actions, and Playwright we may be one step closer to E2E tests that are just as cheap as integration tests.
+
+Let's assume we're working on a website or app hosted on netlify with deploy previews on pull-requests. [Here is an example application](https://github.com/tone-row/easy-e2e), forged in the flames of create-react-app, that stores some text in local storage.
 
 <img
   src="https://res.cloudinary.com/tone-row/image/upload/c_crop,g_west,w_472/v1625166486/tone-row-2021/demo-app-gif.gif"
   alt="Demo App - user enters text and it's displayed"
-  width="400"
-  height="400"
+  width="473"
+  height="246"
 />
 
 When I make PR's I end up with a fancy netlify preview like so:
@@ -37,51 +39,51 @@ When I make PR's I end up with a fancy netlify preview like so:
 <img
   src="https://res.cloudinary.com/tone-row/image/upload/v1625167916/tone-row-2021/netlify%20deploy%20preview.png"
   alt="Example netlify deploy preview"
-  width="400"
-  height="400"
+  width="1254"
+  height="570"
 />
 
-**Our goal:** grab the netlify preview url, run some end-to-end tests with playwright, sleep better at night!
+## Goal
+
+- grab the netlify preview url
+- run some end-to-end tests with playwright
+- sleep better at night!
 
 ## Step 1
+
+We'll use a globally installed version of `playwright` so the only package we need to add to our repo is the test runner.
 
 ```shell
 yarn add -D @playwright/test
 ```
 
-Both locally and in our continuous integration we're going to use a globally installed version of `playwright`– so the only package we need to add to our repo is the test runner.
-
-Using playwright with other test runners (the obvious choice being jest because it's shipped with create-react-app) is definitely possible; however, IMO we don't benefit much because it requires a bit more setup; plus the concept of "coverage" in end-to-end testing is a pretty hard thing to pin down.
-
 ## Step 2
 
-Add the following script to `package.json`
+Add an `e2e` npm script to run it.
 
 ```json
 "e2e": "npx playwright test --browser=all e2e"
 ```
 
-This is going to run any tests in our `e2e` folder in chromium (Chrome), firefox, and webkit (Safari). Let's prepare that folder.
+This is going to run any tests in our `e2e` folder in Chrome, Firefox, Safari.
 
 ## Step 3
+
+Create the folder we referenced above and add one test file.
 
 ```bash
 mkdir e2e && touch e2e/app.spec.ts
 ```
 
-We make an `e2e` folder in the root of project, and add one test file named `app.spec.ts`
-
 ## Step 4
 
-Let's write our first test. We're going to test that our page has the correct title.
+Let's test that our page has the correct title:
 
 ```tsx
 // app.spec.ts
 import { test as base, expect } from "@playwright/test";
 
-type Fixtures = { url: string };
-
-const test = base.extend<Fixtures>({
+const test = base.extend<{ url: string }>({
   url: process.env.E2E_START_URL ?? "http://localhost:3000",
 });
 
@@ -102,35 +104,17 @@ describe("App", () => {
 });
 ```
 
-The test itself is pretty straightforward. The more interesting piece of the puzzle is what playwright calls fixtures. Fixtures is a fancy word for _things you want to be passed to each of your test runs_. In our case, we need to grab our netlify deploy preview url, and pass that to each test run. This code...
+We use `base.extend` to pass fixtures (in our case `url`) to each of our test runs.
 
-```ts
-import { test as base, expect } from "@playwright/test";
+## Step 5 – Test Locally
 
-type Fixtures = { url: string };
+In one shell, start your app (`yarn start` for create-react-app).
 
-const test = base.extend<Fixtures>({
-  url: process.env.E2E_START_URL ?? "http://localhost:3000",
-});
+In another shell, try `yarn e2e`. You may need to install some playwright dependencies the first time you run it, but you should see 3 tests run and pass.
 
-const { describe, beforeEach } = test;
-```
+For a little added spice, try `yarn e2e --headed`. This will open the browser window and give you some good insight into what the test runner does behind the scenes.
 
-...is saying
-
-- I'd like to expose a fixture (variable) called `url` to each of my tests
-- If there's an environment variable on the node process called `E2E_START_URL` - use that value. Otherwise use localhost:3000 (create react app's default).
-- Finally, give me back the `describe` and `beforeEach` utils we need to write our tests
-
-## Step 5
-
-Test locally! In one shell, start your app (`yarn start` for CRA). In another shell, try `yarn e2e`. You may need to install some playwright dependencies the first time you run it, but you should see 3 tests run and pass.
-
-For a little added spice, try `yarn e2e --headed`. This will actually open the browser windows and give you some good insight into what the test runner is doing behind the scenes.
-
-Sweet! On to the continuous integration part of the equation...
-
-## Step 6
+## Step 6 – Continuous Integration with Github Actions
 
 If you don't already have any github actions running, create the directory `.github/workflows` in the root of your repo. Then add the following code a file called `e2e.yml`
 

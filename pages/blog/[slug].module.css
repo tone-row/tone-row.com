@@ -31,3 +31,9 @@
 .Mdx ul {
   list-style: disc;
 }
+
+.BannerImage {
+  border-radius: 20px;
+  margin-inline: auto;
+  max-width: min(100%, 600px) !important;
+}

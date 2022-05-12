@@ -27,25 +27,13 @@ export default function Slug({ post, source = "" }: Contract) {
         url={`/blog/${post.slug}`}
       />
       <Page pb={10} className={styles.Page} pt={3} at={{ tablet: { pt: 0 } }}>
-        <Container>
-          {post.preview_credit ? (
-            <ImageWithCaption caption={post.preview_credit}>
-              <Image
-                src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
-                width={1000}
-                height={500}
-                alt={post.title}
-              />
-            </ImageWithCaption>
-          ) : (
-            <Image
-              src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
-              width={1000}
-              height={500}
-              alt={post.title}
-            />
-          )}
-        </Container>
+        <img
+          src={`https://res.cloudinary.com/tone-row/image/upload/f_auto,q_auto,dpr_2.0,w_1000,h_500,c_fit/v1621548408/tone-row-2021/${post.preview}`}
+          alt={post.title}
+          className={styles.BannerImage}
+          width={post.preview_width}
+          height={post.preview_height}
+        />
         <Container style={{ maxWidth: "800px", textAlign: "center" }}>
           <Box gap={3} as="header">
             <Small>{formatDate(post.published)}</Small>

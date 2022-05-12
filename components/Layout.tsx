@@ -6,7 +6,7 @@ import Moon from "./moon.svg";
 import Sun from "./sun.svg";
 import Link from "next/link";
 import styled from "styled-components";
-import { Extralarge, Small } from "./typography";
+import { Extralarge, Medium, Small } from "./typography";
 import styles from "./Layout.module.css";
 import createPersistedState from "use-persisted-state";
 
@@ -68,8 +68,7 @@ export default function Layout({ children }: { children: ReactNode }) {
               className={styles.BackHome}
               self="center start"
             >
-              <Hand>{`👈`}</Hand>
-              <Small>Home</Small>
+              <Medium>&larr; Home</Medium>
             </Box>
           </Link>
         )}

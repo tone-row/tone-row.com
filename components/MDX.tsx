@@ -12,7 +12,7 @@ const Paragraph = (props: any) => (
 );
 
 const H2 = (props: any) => (
-  <Container>
+  <Container pt={4}>
     <Large as="h2" style={{ fontWeight: 700 }} {...props} />
   </Container>
 );
@@ -63,6 +63,10 @@ const Ul = ({ children, ...props }: any) => {
   );
 };
 
+const A = (props: any) => {
+  return <a target="_blank" {...props} />;
+};
+
 export const MDX = ({ source }: { source: any }) => {
   const Component = useMemo(() => getMDXComponent(source), [source]);
 
@@ -77,6 +81,7 @@ export const MDX = ({ source }: { source: any }) => {
         blockquote: Blockquote,
         pre: Pre,
         ul: Ul,
+        a: A,
       }}
     />
   );

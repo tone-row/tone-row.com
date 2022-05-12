@@ -10,8 +10,10 @@ export interface Post {
   content: string;
   slug: string;
   preview: string;
-  description: string;
+  preview_width: number;
+  preview_height: number;
   preview_credit?: string;
+  description: string;
   partnership?: string;
   status: "published" | "draft";
 }
