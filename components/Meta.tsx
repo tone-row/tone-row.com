@@ -1,10 +1,13 @@
 import Head from "next/head";
 import { ReactNode } from "react";
 
+const DEFAULT_DESCRIPTION =
+  "Tone Row is a space for web-development research with a focus on programming for social impact.";
+
 export default function Meta({
   children,
   pageTitle,
-  description = "Tone Row is a space for web-development research with a focus on programming for social impact.",
+  description = DEFAULT_DESCRIPTION,
   image = "https://res.cloudinary.com/tone-row/image/upload/v1621880547/tone-row-2021/jn9eujlz0tghwlzlptvz.png",
   url = "/",
 }: {
