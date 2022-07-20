@@ -37,10 +37,21 @@ html {
 
 a {
   color: inherit;
+}
+
+a:not([class]) {
+  color: inherit;
   text-decoration: none;
   text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0px;
+  text-decoration-skip-ink: none;
+  text-decoration-color: rgba(0, 0, 0, 0.25);
+}
+
+a:not([class]):hover {
+  text-decoration-color: rgba(61, 27, 226, 1);
+  color: rgba(61, 27, 226, 1);
 }
 
 * {
@@ -144,11 +155,12 @@ html[data-mode="dark"] {
 
 body code:not([class*="hljs"]) {
   font-size: 0.75em !important;
-  background: linear-gradient(to bottom right, #fafafa, #dadada);
+  background: #f0f0f0;
+  border: 2px solid #cacaca;
   color: black;
   padding: 6px 6px;
   line-height: 1;
-  font-family: "Space Mono", Courier, monospace;
+  font-family: Courier, monospace;
   border-radius: 3px;
   display: inline-block;
 }
@@ -161,4 +173,17 @@ body code {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.dalle2 {
+  font-family: Helvetica;
+  font-weight: 700;
+  color: var(--palette-blue-0);
+}
+
+.note {
+  padding: calc(var(--spacer-px) * 2);
+  max-width: 550px;
+  margin-inline: auto;
+  color: var(--color-secondary);
 }
