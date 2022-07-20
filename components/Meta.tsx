@@ -17,7 +17,7 @@ export default function Meta({
   image?: string;
   url?: string;
 }) {
-  const title = [`Tone Row`, pageTitle].filter(Boolean).join(" – ");
+  const title = [pageTitle, `Tone Row`].filter(Boolean).join(" – ");
   const fullUrl = ["https://tone-row.com", url].join("");
   return (
     <Head>
