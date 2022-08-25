@@ -496,11 +496,11 @@ body {
 
 :where(:root) {
 	--base-font-family:nm;
-	--base-font-size-px:20px;
-	--base-font-size:20;
+	--base-font-size-px:19px;
+	--base-font-size:19;
 	--base-font-size-mobile-px:16px;
 	--base-font-size-mobile:16;
-	--base-font-line-height:1.4;
+	--base-font-line-height:1.45;
 	--base-font-line-height-mobile:1.45;
 	--spacer-px:6px;
 	--spacer:6;

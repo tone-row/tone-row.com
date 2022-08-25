@@ -12,7 +12,7 @@ export default function PostList({ posts }: { posts: Post[] }) {
         .sort((a, b) => b.published.localeCompare(a.published))
         .map((post) => (
           <Link href={`/blog/${post.slug}`} passHref key={post.slug}>
-            <Box as="a" gap={2}>
+            <Box as="a" gap={1}>
               <Medium>{post.title}</Medium>
               <Small>{formatDate(post.published)}</Small>
             </Box>

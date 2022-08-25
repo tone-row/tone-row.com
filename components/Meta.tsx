@@ -18,7 +18,7 @@ export default function Meta({
   url?: string;
 }) {
   const title = [pageTitle, `Tone Row`].filter(Boolean).join(" – ");
-  const fullUrl = ["https://tone-row.com", url].join("");
+  const fullUrl = ["https://tone-row.com", url].join("").toLowerCase();
   return (
     <Head>
       <title>{title}</title>
@@ -34,6 +34,7 @@ export default function Meta({
       <meta property="twitter:url" content={fullUrl} />
       <meta name="twitter:card" content="summary_large_image" />
       <meta property="twitter:domain" content="tone-row.com" />
+      <link rel="canonical" href={fullUrl} />
       {children}
     </Head>
   );

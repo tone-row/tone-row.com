@@ -158,11 +158,12 @@ body code:not([class*="hljs"]) {
   background: #f0f0f0;
   border: 2px solid #cacaca;
   color: black;
-  padding: 6px 6px;
+  padding: 5px 5px;
   line-height: 1;
   font-family: Courier, monospace;
   border-radius: 3px;
   display: inline-block;
+  transform: translateY(-2px);
 }
 
 body code {

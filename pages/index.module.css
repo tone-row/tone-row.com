@@ -4,7 +4,6 @@
 
 .home a {
   text-decoration: none;
-  transition: opacity 0.2s ease-in-out;
 }
 
 .home a:hover {
