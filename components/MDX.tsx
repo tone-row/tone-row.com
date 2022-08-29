@@ -36,7 +36,7 @@ const Image = (props: any) => (
 );
 
 const Blockquote = (props: any) => (
-  <Container>
+  <Container className="blockquote" as="blockquote">
     <Type size={2} {...props} />
   </Container>
 );

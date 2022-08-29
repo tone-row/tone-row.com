@@ -2,7 +2,7 @@ import "modern-css-reset";
 import "./_app.css";
 import "../slang/slang.css";
 // Code Highlight
-import "highlight.js/styles/night-owl.css";
+import "highlight.js/styles/paraiso-light.css";
 
 import { AppProps } from "next/app";
 import Head from "next/head";

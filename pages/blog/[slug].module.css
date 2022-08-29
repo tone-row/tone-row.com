@@ -12,10 +12,11 @@
 .Mdx blockquote {
   opacity: 0.5;
   font-size: 2em;
+  font-style: italic;
 }
 
-.Mdx blockquote a {
-  text-decoration: none;
+.Mdx blockquote p + p {
+  margin-top: 1rem;
 }
 
 .Mdx img {
