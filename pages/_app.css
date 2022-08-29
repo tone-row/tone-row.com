@@ -150,20 +150,27 @@ html[data-mode="dark"] {
   width: 100%;
   overflow: auto;
   border-radius: 4px;
-  background-color: #011627;
+  background-color: #e7e9db;
 }
 
 body code:not([class*="hljs"]) {
   font-size: 0.75em !important;
-  background: #f0f0f0;
-  border: 2px solid #cacaca;
-  color: black;
-  padding: 5px 5px;
+  background: #e7e9db;
+  color: #4f424c;
+  padding: 6px 4px 4px 5px;
   line-height: 1;
-  font-family: Courier, monospace;
   border-radius: 3px;
   display: inline-block;
   transform: translateY(-2px);
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: Fira Code, ui-monospace, SFMono-Regular, Consolas,
+    "Liberation Mono", Menlo, monospace !important;
+  font-size: 1em;
 }
 
 body code {
