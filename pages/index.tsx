@@ -1,4 +1,3 @@
-import React from "react";
 import { Page, Section } from "../components/structure";
 import { Large, Medium } from "../components/typography";
 import Link from "next/link";
@@ -9,6 +8,7 @@ import Meta from "../components/Meta";
 import PostList from "../components/PostList";
 import FlowchartFun from "../components/flowchart-fun.svg";
 import styles from "./index.module.css";
+import Image from "next/image";
 
 type Contract = {
   posts: Post[];
@@ -32,10 +32,10 @@ export default function Index({ posts }: Contract) {
           <Section>
             <Large as="h2">Creativity / Productivity</Large>
             <Medium>
-              We like to develop open-source tools to improve productivity and
-              developer-experiences.
+              We develop tools at the intersection of productivity and
+              creativity.
             </Medium>
-            <ul>
+            <ul style={{ display: "grid", gap: "1rem" }}>
               <li>
                 <Box
                   as="a"
@@ -46,7 +46,25 @@ export default function Index({ posts }: Contract) {
                   gap={3}
                 >
                   <FlowchartFun height="70" width="70" className={styles.FF} />
-                  <Medium>flowchart.fun</Medium>
+                  <Medium>Flowchart Fun</Medium>
+                </Box>
+              </li>
+              <li>
+                <Box
+                  as="a"
+                  href="https://unhands.app"
+                  flow="column"
+                  content="normal start"
+                  items="center normal"
+                  gap={3}
+                >
+                  <Image
+                    width={70}
+                    height={70}
+                    src="/unhands.png"
+                    alt="Unhands"
+                  />
+                  <Medium>Unhands</Medium>
                 </Box>
               </li>
               <li>
