@@ -33,6 +33,7 @@ html {
     ),
     calc(1px * var(--spacerMax))
   );
+  --code-bg: #011627;
 }
 
 a {
@@ -150,13 +151,13 @@ html[data-mode="dark"] {
   width: 100%;
   overflow: auto;
   border-radius: 4px;
-  background-color: #e7e9db;
+  background-color: var(--code-bg);
 }
 
 body code:not([class*="hljs"]) {
   font-size: 0.75em !important;
-  background: #e7e9db;
-  color: #4f424c;
+  background: var(--code-bg);
+  color: white;
   padding: 6px 4px 4px 5px;
   line-height: 1;
   border-radius: 3px;
