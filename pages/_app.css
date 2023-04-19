@@ -154,10 +154,18 @@ html[data-mode="dark"] {
   background-color: var(--code-bg);
 }
 
-body code:not([class*="hljs"]) {
-  font-size: 0.75em !important;
+body code {
+  background: #eee;
+  color: var(--code-bg);
+}
+
+body .code-wrapper code {
   background: var(--code-bg);
   color: white;
+}
+
+body code:not([class*="hljs"]) {
+  font-size: 0.75em !important;
   padding: 6px 4px 4px 5px;
   line-height: 1;
   border-radius: 3px;
