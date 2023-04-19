@@ -259,7 +259,7 @@ Now, let's commit our changes and push them to github. Our github action will ru
 
 ## Using our database
 
-The last thing we need to confirm is that we truly have a typesafe-client. Let's add a script to `src/demo.ts` that will real all of the users from the database:
+The last thing we need to confirm is that we truly have a typesafe-client. Let's add a script to `src/demo.ts` that will select all users from the database.
 
 ```typescript
 import { db } from "./db/db";
@@ -325,9 +325,11 @@ We should see a new user created in our database and printed to the console.
 
 Here's one more link to the [final code](https://github.com/tone-row/drizzle-demo). Overall, my experience using drizzle as a prisma alternative was mixed. 🤔
 
-The schema is expressive and seems ready to use in production, but type-safety seems to come with more manual work. In terms of migrations, I wish it was possible in one step with the Drizzle CLI instead of two, using two packages.
+The schema is expressive and seems ready to use in production, but type-safety seems to come with a bit more manual work. On the other hand, typesafety with the prisma client requires "codegen"-ing the client when you make changes (not to mention in your builds), so you could make the argument that drizzle typesafety is simpler in some ways.
 
-I'm interested to see how Drizzle's adoption grows. If it has smooth integrations with things like next-auth and trpc in future that could further tip the scales in its favor.
+In terms of migrations, I do wish it was possible in one step with the Drizzle CLI instead of two, using two separate packages.
+
+I'm interested to see how Drizzle's adoption grows. If it has super smooth integrations with things like next-auth and trpc that could further tip the scales in its favor.
 
 Let me know what you think on twitter [@tone_row\_](https://twitter.com/tone_row_).
 
